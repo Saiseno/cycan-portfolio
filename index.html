@@ -869,6 +869,106 @@
       }
     }
 
+
+    /* VIDEO INTRODUCTION */
+    #intro {
+      background: rgba(6, 11, 19, 0.72);
+    }
+
+    .video-intro-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+      justify-content: center;
+    }
+
+    .video-shell,
+    .video-intro-copy {
+      background: rgba(12, 20, 32, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .video-shell {
+      width: 100%;
+      max-width: 420px;
+      padding: 12px;
+      margin: 0 auto;
+    }
+
+    .video-shell video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      max-height: 72vh;
+      border-radius: 14px;
+      background: #02060b;
+      object-fit: contain;
+    }
+
+    .video-intro-copy {
+      padding: 26px;
+    }
+
+    .video-intro-copy h3 {
+      margin-bottom: 10px;
+      color: #f4f8fc;
+      font-size: 1.25rem;
+    }
+
+    .video-intro-copy p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .video-points {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin: 18px 0 22px;
+    }
+
+    .video-points li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #cbd5e1;
+    }
+
+    .video-points i {
+      color: #60a5fa;
+      margin-top: 5px;
+    }
+
+    .video-transcript {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(148, 163, 184, 0.14);
+      color: #cbd5e1;
+    }
+
+    .video-transcript summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #dbeafe;
+    }
+
+    .video-transcript p {
+      margin-top: 12px;
+      margin-bottom: 0;
+      color: #9fb0c4;
+    }
+
+    .video-file-note {
+      margin-top: 12px;
+      color: #7f91a5;
+      font-size: 0.82rem;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 980px) {
       .sidebar {
@@ -893,8 +993,13 @@
       }
 
       .about-card,
-      .contact-wrap {
+      .contact-wrap,
+      .video-intro-grid {
         grid-template-columns: 1fr;
+      }
+
+      .video-shell {
+        max-width: 380px;
       }
     }
 
@@ -1024,6 +1129,7 @@
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a>
       <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+      <a href="#intro"><i class="fa-solid fa-circle-play"></i> Video Intro</a>
       <a href="#resume"><i class="fa-solid fa-file-lines"></i> Resume</a>
       <a href="#portfolio"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
       <a href="#services"><i class="fa-solid fa-layer-group"></i> Services</a>
@@ -1060,6 +1166,9 @@
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-primary">
             <i class="fa-solid fa-briefcase"></i> View My Work
+          </a>
+          <a href="#intro" class="btn btn-secondary">
+            <i class="fa-solid fa-circle-play"></i> Watch Introduction
           </a>
           <a href="#services" class="btn btn-secondary">
             <i class="fa-solid fa-code"></i> Website Capabilities
@@ -1143,6 +1252,67 @@
               <span class="skill-tag">CRM Platforms</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO INTRODUCTION -->
+    <section id="intro">
+      <div class="section-inner">
+        <span class="section-label">Video Introduction</span>
+        <h2 class="section-title">Meet me in under 90 seconds.</h2>
+        <p class="section-intro">
+          A short introduction to my background in customer success, customer service,
+          technical support, social media, digital operations, and website development.
+        </p>
+
+        <div class="video-intro-grid">
+          <div class="video-shell">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              aria-label="Video introduction by Cycan Clyde Seno"
+            >
+              <source src="intro-video.mp4.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="video-file-note">
+              Video file: <strong>intro-video.mp4.mp4</strong>
+            </div>
+          </div>
+
+          <aside class="video-intro-copy">
+            <h3>Quick professional introduction</h3>
+            <p>
+              I use this short video to give employers a quick sense of how I communicate
+              and the experience I can bring to a team.
+            </p>
+
+            <ul class="video-points">
+              <li><i class="fa-solid fa-check"></i><span>10+ years of customer and client-facing experience</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Customer Success, Customer Service & Technical Support</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Social Media, Digital Marketing & Content Operations</span></li>
+              <li><i class="fa-solid fa-check"></i><span>Business and portfolio websites using HTML, CSS, GitHub & GitHub Pages</span></li>
+            </ul>
+
+            <a href="#contact" class="btn btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Let’s Connect
+            </a>
+
+            <details class="video-transcript">
+              <summary>Read suggested transcript</summary>
+              <p>
+                Hi, I’m Cycan Clyde Seno. I have more than 10 years of experience across customer
+                service, customer success, technical support, social media, and digital operations.
+                I’ve supported customers through phone, email, chat, webinars, and one-on-one coaching,
+                and I also have hands-on experience with content, digital marketing, and website
+                development using HTML, CSS, GitHub, and GitHub Pages. I’m currently open to opportunities
+                where I can contribute my customer-facing, technical, digital, and communication skills.
+                Thanks for visiting my portfolio, and I’d be happy to connect.
+              </p>
+            </details>
+          </aside>
         </div>
       </div>
     </section>
