@@ -81,14 +81,119 @@
       text-align: center;
     }
 
+    .profile-photo-wrap {
+      position: relative;
+      width: 155px;
+      height: 155px;
+      margin: 0 auto 18px;
+    }
+
     .profile-photo {
       width: 155px;
       height: 155px;
       object-fit: cover;
       border-radius: 50%;
-      margin: 0 auto 18px;
       border: 5px solid rgba(255,255,255,0.14);
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .profile-edit-button {
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: var(--white);
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease, background 0.2s ease;
+      z-index: 2;
+    }
+
+    .profile-edit-button:hover {
+      transform: scale(1.07);
+      background: var(--accent-dark);
+    }
+
+    .profile-editor {
+      display: none;
+      margin: -2px 0 20px;
+      padding: 14px;
+      border: 1px solid rgba(148,163,184,0.22);
+      border-radius: 12px;
+      background: rgba(15,23,42,0.72);
+      text-align: left;
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .profile-editor.show {
+      display: block;
+    }
+
+    .profile-editor strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #f8fafc;
+      font-size: 0.86rem;
+    }
+
+    .profile-editor p {
+      margin-bottom: 10px;
+      color: #94a3b8;
+    }
+
+    .profile-editor-actions {
+      display: grid;
+      gap: 8px;
+    }
+
+    .profile-editor .editor-action {
+      width: 100%;
+      border: 1px solid rgba(148,163,184,0.24);
+      border-radius: 9px;
+      padding: 9px 10px;
+      background: rgba(30,41,59,0.95);
+      color: #f8fafc;
+      font: inherit;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .profile-editor .editor-action:hover {
+      background: rgba(51,65,85,0.98);
+    }
+
+    .profile-editor .editor-action.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .profile-editor .editor-action.primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .profile-editor-status {
+      min-height: 1.2em;
+      margin-top: 9px;
+      color: #bfdbfe;
+      font-size: 0.75rem;
+    }
+
+    .edit-only {
+      display: none;
+    }
+
+    body.edit-mode .edit-only {
+      display: inline-flex;
     }
 
     .profile h1 {
@@ -526,6 +631,111 @@
       margin: 12px 0 22px;
     }
 
+    /* EMPLOYER MESSAGE FORM */
+    .message-panel {
+      margin-top: 26px;
+      padding: 30px;
+      border-radius: var(--radius);
+      background: rgba(12, 20, 32, 0.90);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .message-panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .message-panel-head h3 {
+      color: #f4f8fc;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .message-panel-head p {
+      color: #9fb0c4;
+      max-width: 720px;
+    }
+
+    .message-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      color: #dce7f3;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      border: 1px solid rgba(148, 163, 184, 0.20);
+      border-radius: 11px;
+      background: rgba(7, 13, 22, 0.82);
+      color: #f8fafc;
+      padding: 13px 14px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: #6f8195;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: rgba(96, 165, 250, 0.78);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.13);
+      background: rgba(9, 17, 29, 0.96);
+    }
+
+    .form-field textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .message-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .message-note {
+      color: #8496aa;
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    .message-note i {
+      margin-right: 5px;
+      color: #60a5fa;
+    }
+
     footer {
       margin-left: 300px;
       padding: 24px 7vw;
@@ -695,6 +905,22 @@
         grid-template-columns: 1fr;
       }
 
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .message-panel {
+        padding: 22px;
+      }
+
+      .message-panel-head {
+        flex-direction: column;
+      }
+
       .portfolio-card img {
         height: 230px;
       }
@@ -716,7 +942,37 @@
   <aside class="sidebar">
     <div class="profile">
       <!-- Your existing GitHub file: profile.jpg -->
-      <img src="profile.jpg" alt="Cycan Clyde Seno" class="profile-photo" />
+      <div class="profile-photo-wrap">
+        <img id="profilePhoto" src="profile.jpg" alt="Cycan Clyde Seno" class="profile-photo" />
+        <button
+          id="profileEditButton"
+          class="profile-edit-button edit-only"
+          type="button"
+          aria-label="Change profile photo"
+          title="Change profile photo"
+        >
+          <i class="fa-solid fa-camera"></i>
+        </button>
+      </div>
+
+      <input id="profilePhotoInput" type="file" accept="image/*" hidden />
+
+      <div id="profileEditor" class="profile-editor">
+        <strong>Profile Photo Editor</strong>
+        <p>Choose a photo and I will crop it square and compress it for your portfolio. Nothing is uploaded anywhere from this page.</p>
+        <div class="profile-editor-actions">
+          <button id="chooseProfilePhoto" class="editor-action" type="button">
+            <i class="fa-solid fa-image"></i> Choose New Photo
+          </button>
+          <a id="downloadProfilePhoto" class="editor-action primary" href="#" download="profile.jpg" hidden>
+            <i class="fa-solid fa-download"></i> Download Optimized profile.jpg
+          </a>
+          <button id="resetProfilePreview" class="editor-action" type="button" hidden>
+            <i class="fa-solid fa-arrow-rotate-left"></i> Reset Preview
+          </button>
+        </div>
+        <div id="profileEditorStatus" class="profile-editor-status"></div>
+      </div>
 
       <h1>Cycan Clyde Seno</h1>
 
@@ -1204,6 +1460,109 @@
             </a>
           </div>
         </div>
+
+        <div class="message-panel" id="leave-message">
+          <div class="message-panel-head">
+            <div>
+              <span class="section-label">Let’s Connect</span>
+              <h3>Interested in working together?</h3>
+              <p>
+                If you’re hiring for a role that matches my experience, feel free to send me a message.
+                I’d be happy to connect and discuss how I can contribute to your team.
+              </p>
+            </div>
+            <a
+              href="https://www.linkedin.com/in/cycanclydeseno/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              <i class="fa-brands fa-linkedin-in"></i> Connect on LinkedIn
+            </a>
+          </div>
+
+          <form
+            class="message-form"
+            action="https://formsubmit.co/cycanseno07@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New employer message from Cycan's portfolio" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="visitorName">Name *</label>
+                <input
+                  id="visitorName"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="visitorEmail">Email *</label>
+                <input
+                  id="visitorEmail"
+                  name="email"
+                  type="email"
+                  placeholder="you@company.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="visitorCompany">Company</label>
+                <input
+                  id="visitorCompany"
+                  name="company"
+                  type="text"
+                  placeholder="Company name"
+                  autocomplete="organization"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="visitorRole">Role / Opportunity</label>
+                <input
+                  id="visitorRole"
+                  name="role_or_opportunity"
+                  type="text"
+                  placeholder="e.g. Customer Success Specialist"
+                />
+              </div>
+
+
+              <div class="form-field full">
+                <label for="visitorMessage">Message *</label>
+                <textarea
+                  id="visitorMessage"
+                  name="message"
+                  placeholder="Tell me briefly about the role or opportunity."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="message-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+              <a href="mailto:cycanseno07@gmail.com" class="btn btn-secondary">
+                <i class="fa-solid fa-envelope"></i> Email Me Directly
+              </a>
+            </div>
+
+            <p class="message-note">
+              <i class="fa-solid fa-lock"></i>
+              Your message is sent privately to my email and is never displayed publicly on this website.
+            </p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -1214,6 +1573,114 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Hidden profile-photo editor. Open this site with ?edit=1 to enable it.
+    const params = new URLSearchParams(window.location.search);
+    const editMode = params.get("edit") === "1";
+
+    const profilePhoto = document.getElementById("profilePhoto");
+    const profileEditButton = document.getElementById("profileEditButton");
+    const profilePhotoInput = document.getElementById("profilePhotoInput");
+    const profileEditor = document.getElementById("profileEditor");
+    const chooseProfilePhoto = document.getElementById("chooseProfilePhoto");
+    const downloadProfilePhoto = document.getElementById("downloadProfilePhoto");
+    const resetProfilePreview = document.getElementById("resetProfilePreview");
+    const profileEditorStatus = document.getElementById("profileEditorStatus");
+    const originalProfileSrc = profilePhoto.getAttribute("src");
+    let optimizedProfileUrl = null;
+
+    if (editMode) {
+      document.body.classList.add("edit-mode");
+    }
+
+    const openProfileEditor = () => {
+      if (!editMode) return;
+      profileEditor.classList.toggle("show");
+    };
+
+    const openPhotoPicker = () => {
+      if (!editMode) return;
+      profilePhotoInput.click();
+    };
+
+    profileEditButton.addEventListener("click", openProfileEditor);
+    chooseProfilePhoto.addEventListener("click", openPhotoPicker);
+
+    profilePhotoInput.addEventListener("change", (event) => {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        profileEditorStatus.textContent = "Please choose an image file.";
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        const image = new Image();
+        image.onload = () => {
+          const cropSize = Math.min(image.naturalWidth, image.naturalHeight);
+          const sourceX = Math.max(0, (image.naturalWidth - cropSize) / 2);
+          const sourceY = Math.max(0, (image.naturalHeight - cropSize) / 2);
+          const outputSize = 700;
+          const canvas = document.createElement("canvas");
+          canvas.width = outputSize;
+          canvas.height = outputSize;
+          const ctx = canvas.getContext("2d");
+
+          ctx.drawImage(
+            image,
+            sourceX,
+            sourceY,
+            cropSize,
+            cropSize,
+            0,
+            0,
+            outputSize,
+            outputSize
+          );
+
+          canvas.toBlob((blob) => {
+            if (!blob) {
+              profileEditorStatus.textContent = "I could not process this image. Please try another photo.";
+              return;
+            }
+
+            if (optimizedProfileUrl) {
+              URL.revokeObjectURL(optimizedProfileUrl);
+            }
+
+            optimizedProfileUrl = URL.createObjectURL(blob);
+            profilePhoto.src = optimizedProfileUrl;
+            downloadProfilePhoto.href = optimizedProfileUrl;
+            downloadProfilePhoto.hidden = false;
+            resetProfilePreview.hidden = false;
+
+            const originalKb = Math.max(1, Math.round(file.size / 1024));
+            const optimizedKb = Math.max(1, Math.round(blob.size / 1024));
+            profileEditorStatus.textContent = `Preview ready: ${originalKb} KB -> ${optimizedKb} KB. Download profile.jpg, then replace the existing file in GitHub.`;
+          }, "image/jpeg", 0.82);
+        };
+
+        image.onerror = () => {
+          profileEditorStatus.textContent = "That image could not be opened. Please choose another one.";
+        };
+        image.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    resetProfilePreview.addEventListener("click", () => {
+      if (optimizedProfileUrl) {
+        URL.revokeObjectURL(optimizedProfileUrl);
+        optimizedProfileUrl = null;
+      }
+      profilePhoto.src = originalProfileSrc;
+      profilePhotoInput.value = "";
+      downloadProfilePhoto.hidden = true;
+      resetProfilePreview.hidden = true;
+      profileEditorStatus.textContent = "Preview reset. Your live profile photo has not been changed.";
+    });
 
     const navLinks = document.querySelectorAll(".main-nav a");
     const sections = document.querySelectorAll("main section");
