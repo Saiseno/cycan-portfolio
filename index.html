@@ -3,29 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cycan Clyde Seno - Customer Success, Digital Marketing, Social Media, SEO Content, Website Development with GitHub Pages, and AI-Assisted Workflows." />
-  <title>Cycan Clyde Seno | Portfolio</title>
+  <meta name="description" content="Cycan Clyde Seno — Social Media Manager, Content & Video Specialist, and Customer Success Professional with 10+ years of experience across social media, video production, customer support, and design." />
+  <meta name="theme-color" content="#0b1220" />
+  <meta property="og:title" content="Cycan Clyde Seno | Portfolio" />
+  <meta property="og:description" content="Social media operations, content & video production, design, paid social support, and customer success." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cycanseno.github.io/" />
+  <title>Cycan Clyde Seno | Social Media, Content & Customer Success</title>
 
-  <!-- Social media icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #070b11;
-      --surface: rgba(13, 21, 33, 0.88);
-      --sidebar: #101827;
-      --sidebar-soft: #1b2638;
-      --text: #eef4fb;
-      --muted: #a8b4c4;
-      --line: rgba(148, 163, 184, 0.18);
-      --accent: #3b82f6;
-      --accent-dark: #60a5fa;
-      --white: #ffffff;
-      --shadow: 0 16px 38px rgba(0, 0, 0, 0.30);
+      --bg: #0b1220;
+      --bg-soft: #111b2e;
+      --card: rgba(20, 33, 54, 0.82);
+      --card-solid: #142136;
+      --accent: #38bdf8;
+      --accent-2: #7dd3fc;
+      --text: #f8fafc;
+      --muted: #a7b4c8;
+      --border: rgba(148, 163, 184, 0.2);
+      --success: #86efac;
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
       --radius: 18px;
+      --header-h: 76px;
     }
 
     * {
@@ -36,20 +40,32 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-h) + 18px);
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: var(--bg);
-      background-image:
-        linear-gradient(rgba(3, 7, 12, 0.38), rgba(3, 7, 12, 0.52)),
-        url("portfolio-bg.webp");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       line-height: 1.65;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.12), transparent 34%),
+        radial-gradient(circle at 80% 22%, rgba(99, 102, 241, 0.08), transparent 28%),
+        var(--bg);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.25;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+      z-index: -1;
     }
 
     a {
@@ -57,342 +73,361 @@
       text-decoration: none;
     }
 
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     img {
       max-width: 100%;
       display: block;
     }
 
-    /* LEFT PROFILE / NAVIGATION */
-    .sidebar {
+    :focus-visible {
+      outline: 3px solid var(--accent-2);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .skip-link {
       position: fixed;
-      inset: 0 auto 0 0;
-      width: 300px;
-      height: 100vh;
-      overflow-y: auto;
-      padding: 34px 28px;
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.20), transparent 36%),
-        var(--sidebar);
-      color: var(--white);
-      z-index: 50;
-    }
-
-    .profile {
-      text-align: center;
-    }
-
-    .profile-photo-wrap {
-      position: relative;
-      width: 155px;
-      height: 155px;
-      margin: 0 auto 18px;
-    }
-
-    .profile-photo {
-      width: 155px;
-      height: 155px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid rgba(255,255,255,0.14);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    .profile-edit-button {
-      position: absolute;
-      right: 4px;
-      bottom: 4px;
-      width: 40px;
-      height: 40px;
-      border: 0;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      top: -80px;
+      left: 20px;
+      z-index: 9999;
       background: var(--accent);
-      color: var(--white);
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-      transition: transform 0.2s ease, background 0.2s ease;
-      z-index: 2;
-    }
-
-    .profile-edit-button:hover {
-      transform: scale(1.07);
-      background: var(--accent-dark);
-    }
-
-    .profile-editor {
-      display: none;
-      margin: -2px 0 20px;
-      padding: 14px;
-      border: 1px solid rgba(148,163,184,0.22);
-      border-radius: 12px;
-      background: rgba(15,23,42,0.72);
-      text-align: left;
-      color: #cbd5e1;
-      font-size: 0.8rem;
-      line-height: 1.5;
-    }
-
-    .profile-editor.show {
-      display: block;
-    }
-
-    .profile-editor strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #f8fafc;
-      font-size: 0.86rem;
-    }
-
-    .profile-editor p {
-      margin-bottom: 10px;
-      color: #94a3b8;
-    }
-
-    .profile-editor-actions {
-      display: grid;
-      gap: 8px;
-    }
-
-    .profile-editor .editor-action {
-      width: 100%;
-      border: 1px solid rgba(148,163,184,0.24);
-      border-radius: 9px;
-      padding: 9px 10px;
-      background: rgba(30,41,59,0.95);
-      color: #f8fafc;
-      font: inherit;
-      font-weight: 700;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .profile-editor .editor-action:hover {
-      background: rgba(51,65,85,0.98);
-    }
-
-    .profile-editor .editor-action.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .profile-editor .editor-action.primary:hover {
-      background: var(--accent-dark);
-    }
-
-    .profile-editor-status {
-      min-height: 1.2em;
-      margin-top: 9px;
-      color: #bfdbfe;
-      font-size: 0.75rem;
-    }
-
-    .edit-only {
-      display: none;
-    }
-
-    body.edit-mode .edit-only {
-      display: inline-flex;
-    }
-
-    .profile h1 {
-      font-size: 1.55rem;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .social-links {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 34px;
-    }
-
-    .social-links a {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--sidebar-soft);
-      font-size: 1.1rem;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .social-links a:hover {
-      transform: translateY(-3px);
-      background: var(--accent);
-    }
-
-    .main-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .main-nav a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 15px;
-      border-radius: 10px;
-      color: #cbd5e1;
-      font-weight: 600;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .main-nav a i {
-      width: 22px;
-      text-align: center;
-    }
-
-    .main-nav a:hover,
-    .main-nav a.active {
-      color: var(--white);
-      background: rgba(59, 130, 246, 0.18);
-      transform: translateX(4px);
-    }
-
-    .sidebar-note {
-      margin-top: 28px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.09);
-      font-size: 0.82rem;
-      color: #94a3b8;
-      text-align: center;
-    }
-
-    /* MAIN CONTENT */
-    main {
-      margin-left: 300px;
-    }
-
-    section {
-      padding: 88px 7vw;
-      scroll-margin-top: 20px;
-    }
-
-    .section-inner {
-      max-width: 1150px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--accent-dark);
-      font-size: 0.78rem;
+      color: #04111f;
       font-weight: 800;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      transition: top 0.2s ease;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.04em;
-      line-height: 1.05;
-      margin-bottom: 18px;
+    .skip-link:focus {
+      top: 16px;
     }
 
-    .section-intro {
-      max-width: 800px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin-bottom: 38px;
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--header-h);
+      z-index: 1000;
+      background: rgba(11, 18, 32, 0.78);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
     }
 
-    /* HOME */
-    #home {
-      min-height: 100vh;
+    .nav-wrap {
+      height: 100%;
       display: flex;
       align-items: center;
-      background:
-        linear-gradient(120deg, rgba(236,241,246,0.97), rgba(221,230,240,0.96)),
-        var(--bg);
+      justify-content: space-between;
+      gap: 1.5rem;
     }
 
-    .hero {
-      max-width: 900px;
-    }
-
-    .hero-kicker {
+    .logo {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 13px;
-      border: 1px solid #bfdbfe;
-      border-radius: 999px;
-      color: #1d4ed8;
-      background: #e6edf5;
-      font-weight: 700;
-      margin-bottom: 24px;
+      gap: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent-2);
       font-size: 0.9rem;
     }
 
-    .hero h2 {
-      font-size: clamp(2.7rem, 6vw, 5rem);
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.91rem;
+      padding: 0.62rem 0.74rem;
+      border-radius: 10px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--text);
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card-solid);
+      color: var(--text);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    main {
+      overflow: clip;
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .hero {
+      min-height: 96vh;
+      padding-top: calc(var(--header-h) + 64px);
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1.2rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 14px rgba(134, 239, 172, 0.85);
+    }
+
+    h1 {
+      max-width: 800px;
+      margin-bottom: 1rem;
+      font-size: clamp(3rem, 7vw, 5.6rem);
       line-height: 0.98;
       letter-spacing: -0.055em;
-      margin-bottom: 24px;
     }
 
-    .hero h2 span {
-      color: var(--accent);
+    .gradient-text {
+      background: linear-gradient(90deg, #f8fafc 4%, #7dd3fc 48%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .hero p {
-      max-width: 820px;
-      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    .hero-role {
+      max-width: 780px;
+      margin-bottom: 1.1rem;
+      color: #dbeafe;
+      font-size: clamp(1.1rem, 2.1vw, 1.42rem);
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      max-width: 720px;
       color: var(--muted);
-      margin-bottom: 30px;
+      font-size: 1.06rem;
     }
 
-    .hero-actions {
+    .cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 0.8rem;
+      margin-top: 1.9rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      gap: 0.52rem;
+      min-height: 48px;
+      padding: 0.78rem 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(20, 33, 54, 0.72);
+      color: var(--text);
+      font: inherit;
+      font-size: 0.94rem;
+      font-weight: 750;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(125, 211, 252, 0.58);
+      background: rgba(30, 49, 78, 0.95);
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: var(--white);
-      box-shadow: 0 8px 22px rgba(59,130,246,0.22);
+      border-color: transparent;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #04111f;
+      box-shadow: 0 14px 36px rgba(14, 165, 233, 0.24);
     }
 
     .btn-primary:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, #7dd3fc, #38bdf8);
     }
 
-    .btn-secondary {
-      background: var(--surface);
-      border: 1px solid var(--line);
+    .hero-micro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      margin-top: 1rem;
+      color: #8393ab;
+      font-size: 0.86rem;
     }
 
-    .btn-secondary:hover {
-      transform: translateY(-2px);
+    .hero-micro a:hover {
+      color: var(--accent-2);
+    }
+
+    .profile-card {
+      position: relative;
+      max-width: 360px;
+      margin-left: auto;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(30, 49, 78, 0.86), rgba(13, 24, 42, 0.86));
       box-shadow: var(--shadow);
     }
 
-    /* GENERIC CARDS */
-    .grid {
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      border-radius: inherit;
+      background: linear-gradient(145deg, rgba(56,189,248,0.4), transparent 35%, rgba(99,102,241,0.2));
+      filter: blur(14px);
+      opacity: 0.75;
+    }
+
+    .profile-photo {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 21px;
+    }
+
+    .profile-meta {
       display: grid;
-      gap: 22px;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+      padding: 0.25rem 0.2rem 0.05rem;
+    }
+
+    .profile-meta strong {
+      font-size: 1rem;
+    }
+
+    .profile-meta span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .quick-links {
+      padding: 18px 0 0;
+    }
+
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(15, 27, 46, 0.75);
+    }
+
+    .quick-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 58px;
+      padding: 0.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .quick-link:last-child {
+      border-right: 0;
+    }
+
+    .quick-link:hover {
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--text);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      margin-bottom: 0.45rem;
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      max-width: 540px;
+      color: var(--muted);
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 1rem;
     }
 
     .grid-2 {
@@ -404,1477 +439,1404 @@
     }
 
     .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
+      position: relative;
+      height: 100%;
+      padding: 1.45rem;
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow);
+      background: var(--card);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.16);
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.44);
+      background: rgba(24, 40, 65, 0.92);
+    }
+
+    .card-clickable {
+      display: block;
+    }
+
+    .card-number {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(56,189,248,0.25);
+      border-radius: 11px;
+      background: rgba(56,189,248,0.08);
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 800;
     }
 
     .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
+      margin-bottom: 0.62rem;
+      font-size: 1.18rem;
     }
 
-    .card p {
+    .card p,
+    .card li {
       color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    /* ABOUT */
-    .about-card {
+    .card ul {
       display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 36px;
-      align-items: stretch;
+      gap: 0.55rem;
+      margin-top: 0.8rem;
+      list-style: none;
     }
 
-    .about-main,
-    .about-skills {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: var(--shadow);
+    .card li {
+      position: relative;
+      padding-left: 1.05rem;
     }
 
-    .about-main p + p {
-      margin-top: 14px;
+    .card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
-    .quick-facts {
+    .card-link-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 1rem;
+      color: var(--accent-2);
+      font-size: 0.88rem;
+      font-weight: 750;
+    }
+
+    .about-panel {
       display: grid;
-      gap: 12px;
-      margin-top: 22px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
     }
 
-    .quick-facts div {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1rem;
+    }
+
+    .stat {
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: var(--muted);
+      flex-direction: column;
+      justify-content: center;
+      min-height: 150px;
+      padding: 1.35rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(20,33,54,0.72);
     }
 
-    .quick-facts strong {
-      min-width: 92px;
+    .stat strong {
       color: var(--text);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      line-height: 1;
     }
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .skill-tag {
-      padding: 8px 11px;
-      border-radius: 999px;
-      border: 1px solid #dbeafe;
-      background: #e6edf5;
-      color: #1e40af;
-      font-size: 0.86rem;
-      font-weight: 700;
-    }
-
-    /* RESUME */
-    .timeline {
-      position: relative;
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      position: relative;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px 26px;
-      box-shadow: var(--shadow);
-    }
-
-    .timeline-item .date {
-      display: inline-block;
-      margin-bottom: 7px;
-      color: var(--accent-dark);
-      font-weight: 800;
+    .stat span {
+      margin-top: 0.5rem;
+      color: var(--muted);
       font-size: 0.88rem;
     }
 
-    .timeline-item h3 {
-      margin-bottom: 4px;
-    }
-
-    .timeline-item .company {
-      color: var(--muted);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .timeline-item ul {
-      padding-left: 19px;
-      color: var(--muted);
-    }
-
-    .timeline-item li + li {
-      margin-top: 6px;
-    }
-
-    .resume-download {
-      margin-top: 24px;
-    }
-
-    /* PORTFOLIO */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .portfolio-card {
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .portfolio-card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      background: #e5e7eb;
-    }
-
-    .portfolio-content {
-      padding: 22px;
-    }
-
-    .portfolio-content h3 {
-      margin-bottom: 8px;
-    }
-
-    .portfolio-content p {
-      color: var(--muted);
-      margin-bottom: 15px;
-    }
-
-    .portfolio-links {
+    .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 0.55rem;
+      margin-top: 1rem;
     }
 
-    /* SERVICES */
-    .service-icon {
-      width: 48px;
-      height: 48px;
+    .tag {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      background: #e6edf5;
-      color: var(--accent-dark);
-      margin-bottom: 15px;
+      min-height: 34px;
+      padding: 0.42rem 0.7rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(10,18,32,0.65);
+      color: #c5d2e4;
+      font-size: 0.82rem;
+      font-weight: 650;
+    }
+
+    .experience-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 310px;
+    }
+
+    .experience-card .company {
+      margin-bottom: 0.8rem;
+      color: var(--accent-2);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .experience-card .spacer {
+      flex: 1;
+    }
+
+    .experience-timeline {
+      position: relative;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .experience-timeline::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      bottom: 18px;
+      left: 16px;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(56,189,248,0.45), rgba(148,163,184,0.08));
+    }
+
+    .role-card {
+      position: relative;
+      margin-left: 44px;
+      padding: 1.45rem 1.55rem;
+    }
+
+    .role-card::before {
+      content: "";
+      position: absolute;
+      left: -37px;
+      top: 24px;
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 1px rgba(56,189,248,0.45), 0 0 18px rgba(56,189,248,0.24);
+    }
+
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: 0.9rem;
+    }
+
+    .role-company {
+      margin-bottom: 0.28rem;
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .role-title {
+      margin: 0;
       font-size: 1.2rem;
     }
 
-    /* CONTACT */
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
+    .role-date {
+      flex: 0 0 auto;
+      padding: 0.36rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #c7d4e7;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+      background: rgba(10,18,32,0.52);
     }
 
-    .contact-details {
-      display: grid;
-      gap: 14px;
+    .role-card ul {
+      margin-top: 0.15rem;
     }
 
-    .contact-row {
+    .education-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .education-meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .work-links {
       display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 16px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
     }
 
-    .contact-row i {
-      width: 30px;
-      height: 30px;
-      border-radius: 9px;
+    .mini-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-dark);
-      background: #e6edf5;
-      flex: 0 0 auto;
+      min-height: 36px;
+      padding: 0.45rem 0.68rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: #dbeafe;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: background 0.2s ease, border-color 0.2s ease;
     }
 
-    .contact-row small {
-      display: block;
-      color: var(--muted);
-      margin-bottom: 2px;
+    .mini-link:hover {
+      background: rgba(56,189,248,0.09);
+      border-color: rgba(56,189,248,0.4);
     }
 
-    .contact-cta {
-      background: linear-gradient(135deg, #172033, #0f172a);
-      border-radius: var(--radius);
-      padding: 32px;
-      color: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-cta p {
-      color: #cbd5e1;
-      margin: 12px 0 22px;
-    }
-
-    /* EMPLOYER MESSAGE FORM */
-    .message-panel {
-      margin-top: 26px;
-      padding: 30px;
-      border-radius: var(--radius);
-      background: rgba(12, 20, 32, 0.90);
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .message-panel-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-
-    .message-panel-head h3 {
-      color: #f4f8fc;
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
-
-    .message-panel-head p {
-      color: #9fb0c4;
-      max-width: 720px;
-    }
-
-    .message-form {
+    .tool-groups {
       display: grid;
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1rem;
     }
 
-    .form-grid {
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid rgba(56,189,248,0.28);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 90% 15%, rgba(56,189,248,0.14), transparent 30%),
+        rgba(17, 29, 49, 0.88);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h2 {
+      margin-bottom: 0.75rem;
+      font-size: clamp(2rem, 5vw, 3.7rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .contact-card p {
+      max-width: 650px;
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .contact-actions .btn {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .contact-note {
+      margin-top: 0.8rem;
+      color: #7f8ea5;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    footer {
+      padding: 28px 0 36px;
+      color: #7f8ea5;
+      font-size: 0.86rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-row a:hover {
+      color: var(--accent-2);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 900;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(20,33,54,0.94);
+      color: var(--text);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .reveal.in-view,
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+
+    /* Social media case study */
+    .case-study-shell {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .case-study-content {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+      gap: 2rem;
+      align-items: center;
+      padding: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    .case-study-copy h3 {
+      margin-bottom: 0.75rem;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    .case-study-copy > p {
+      color: var(--muted);
+      margin-bottom: 1.15rem;
+    }
+
+    .proof-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
     }
 
-    .form-field {
-      display: grid;
-      gap: 7px;
+    .proof-item {
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(11, 18, 32, 0.48);
     }
 
-    .form-field.full {
-      grid-column: 1 / -1;
+    .proof-item strong {
+      display: block;
+      color: var(--accent-2);
+      font-size: 1rem;
+      line-height: 1.2;
+      margin-bottom: 0.28rem;
     }
 
-    .form-field label {
-      color: #dce7f3;
-      font-size: 0.9rem;
+    .proof-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .case-study-visual {
+      position: relative;
+    }
+
+    .case-study-image-link {
+      display: block;
+      overflow: hidden;
+      border: 1px solid rgba(125, 211, 252, 0.24);
+      border-radius: 16px;
+      background: #f8fafc;
+      box-shadow: var(--shadow);
+    }
+
+    .case-study-image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.35s ease;
+    }
+
+    .case-study-image-link:hover .case-study-image {
+      transform: scale(1.012);
+    }
+
+    .image-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 0.8rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .image-caption strong {
+      color: var(--text);
       font-weight: 700;
     }
 
-    .form-field input,
-    .form-field textarea {
-      width: 100%;
-      border: 1px solid rgba(148, 163, 184, 0.20);
-      border-radius: 11px;
-      background: rgba(7, 13, 22, 0.82);
-      color: #f8fafc;
-      padding: 13px 14px;
-      font: inherit;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+
+
+    /* Upwork service feature */
+    .upwork-service-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+      gap: 1.25rem;
+      padding: clamp(1.35rem, 3vw, 2rem);
+      align-items: stretch;
     }
 
-    .form-field input::placeholder,
-    .form-field textarea::placeholder {
-      color: #6f8195;
+    .upwork-service-main h3 {
+      margin-bottom: 0.75rem;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
     }
 
-    .form-field input:focus,
-    .form-field textarea:focus {
-      border-color: rgba(96, 165, 250, 0.78);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.13);
-      background: rgba(9, 17, 29, 0.96);
+    .upwork-service-main > p {
+      color: var(--muted);
+      max-width: 760px;
     }
 
-    .form-field textarea {
-      min-height: 125px;
-      resize: vertical;
+    .upwork-service-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      border: 1px solid rgba(56, 189, 248, 0.24);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(56, 189, 248, 0.10), rgba(20, 33, 54, 0.74));
     }
 
-    .message-actions {
+    .upwork-service-panel strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--accent-2);
+      font-size: 1.05rem;
+    }
+
+    .upwork-service-panel p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .upwork-service-list {
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+      list-style: none;
+    }
+
+    .upwork-service-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    .upwork-service-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 800;
+    }
+
+
+        /* Visual work-sample galleries */
+    .work-showcase .section-heading {
+      margin-bottom: 1.5rem;
+    }
+
+    .showcase-intro {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
       align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
     }
 
-    .message-note {
-      color: #8496aa;
-      font-size: 0.82rem;
-      margin-top: 2px;
-    }
-
-    .message-note i {
-      margin-right: 5px;
-      color: #60a5fa;
-    }
-
-    footer {
-      margin-left: 300px;
-      padding: 24px 7vw;
-      text-align: center;
+    .showcase-intro p {
+      max-width: 720px;
       color: var(--muted);
-      border-top: 1px solid var(--line);
-      background: var(--surface);
-      font-size: 0.9rem;
     }
 
-
-    /* Softer page backgrounds to reduce glare */
-    #about,
-    #portfolio,
-    #contact {
-      background: #e3e8ee;
-    }
-
-    #resume,
-    #services {
-      background: #edf1f5;
-    }
-
-    .card,
-    .about-main,
-    .about-skills,
-    .timeline-item,
-    .portfolio-card,
-    .contact-row {
-      background: #f5f7f9;
-    }
-
-    .contact-cta {
-      background: linear-gradient(135deg, #1b2535, #111827);
-    }
-
-    /* DARK BACKGROUND THEME - uses optimized portfolio-bg.webp */
-    #home {
-      background: linear-gradient(110deg, rgba(5, 10, 18, 0.42), rgba(5, 10, 18, 0.68));
-    }
-
-    #about,
-    #portfolio,
-    #contact {
-      background: rgba(5, 10, 18, 0.68);
-    }
-
-    #resume,
-    #services {
-      background: rgba(8, 14, 23, 0.76);
-    }
-
-    .sidebar {
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 38%),
-        rgba(7, 12, 20, 0.96);
-      border-right: 1px solid rgba(96, 165, 250, 0.12);
-    }
-
-    .hero-kicker {
-      border-color: rgba(96, 165, 250, 0.28);
-      color: #bfdbfe;
-      background: rgba(15, 30, 48, 0.76);
-    }
-
-    .btn-secondary {
-      color: #e8eef7;
-      background: rgba(15, 23, 42, 0.78);
-      border-color: rgba(148, 163, 184, 0.22);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(30, 41, 59, 0.92);
-    }
-
-    .card,
-    .about-main,
-    .about-skills,
-    .timeline-item,
-    .portfolio-card,
-    .contact-row {
-      background: rgba(12, 20, 32, 0.86);
-      border-color: rgba(148, 163, 184, 0.16);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .skill-tag {
-      color: #cfe5ff;
-      background: rgba(20, 44, 72, 0.82);
-      border-color: rgba(96, 165, 250, 0.26);
-    }
-
-    .service-icon,
-    .contact-row i {
-      color: #93c5fd;
-      background: rgba(30, 64, 105, 0.62);
-    }
-
-    .quick-facts strong,
-    .timeline-item h3,
-    .portfolio-content h3,
-    .card h3 {
-      color: #f4f8fc;
-    }
-
-    .timeline-item .date,
-    .section-label {
-      color: #60a5fa;
-    }
-
-    .portfolio-card img {
-      background: #0b111b;
-    }
-
-    .contact-cta {
-      background: linear-gradient(135deg, rgba(12, 24, 39, 0.94), rgba(5, 10, 18, 0.96));
-      border: 1px solid rgba(96, 165, 250, 0.16);
-    }
-
-    footer {
-      color: #93a4b8;
-      border-top-color: rgba(148, 163, 184, 0.14);
-      background: rgba(5, 10, 18, 0.90);
-    }
-
-    @media (max-width: 980px) {
-      body {
-        background-attachment: scroll;
-      }
-    }
-
-
-    /* VIDEO INTRODUCTION */
-    #intro {
-      background: rgba(6, 11, 19, 0.72);
-    }
-
-    .video-intro-grid {
+    .portfolio-gallery {
       display: grid;
-      grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
-      gap: 32px;
-      align-items: start;
-      justify-content: center;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
     }
 
-    .video-shell,
-    .video-intro-copy {
-      background: rgba(12, 20, 32, 0.88);
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+    .gallery-card {
+      overflow: hidden;
+      padding: 0;
     }
 
-    .video-shell {
-      width: 100%;
-      max-width: 420px;
-      padding: 12px;
-      margin: 0 auto;
-    }
-
-    .video-shell video {
+    .gallery-link {
       display: block;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .gallery-image {
       width: 100%;
-      aspect-ratio: 9 / 16;
-      max-height: 72vh;
-      border-radius: 14px;
-      background: #02060b;
+      aspect-ratio: 16 / 10;
       object-fit: contain;
+      background: #f8fafc;
+      transition: transform 0.3s ease;
     }
 
-    .video-intro-copy {
-      padding: 26px;
+    .gallery-link:hover .gallery-image {
+      transform: scale(1.012);
     }
 
-    .video-intro-copy h3 {
-      margin-bottom: 10px;
-      color: #f4f8fc;
-      font-size: 1.25rem;
-    }
-
-    .video-intro-copy p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .video-points {
-      list-style: none;
-      display: grid;
-      gap: 11px;
-      margin: 18px 0 22px;
-    }
-
-    .video-points li {
+    .gallery-meta {
       display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      color: #cbd5e1;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.1rem 1.1rem;
     }
 
-    .video-points i {
-      color: #60a5fa;
-      margin-top: 5px;
+    .gallery-meta strong {
+      font-size: 0.95rem;
     }
 
-    .video-transcript {
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(148, 163, 184, 0.14);
-      color: #cbd5e1;
+    .gallery-meta span {
+      color: var(--muted);
+      font-size: 0.8rem;
+      white-space: nowrap;
     }
 
-    .video-transcript summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: #dbeafe;
+    .showcase-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
     }
 
-    .video-transcript p {
-      margin-top: 12px;
-      margin-bottom: 0;
-      color: #9fb0c4;
-    }
-
-    .video-file-note {
-      margin-top: 12px;
-      color: #7f91a5;
-      font-size: 0.82rem;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 980px) {
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 32px 22px;
+      nav {
+        position: fixed;
+        top: calc(var(--header-h) - 2px);
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: rgba(11,18,32,0.98);
+        box-shadow: var(--shadow);
       }
 
-      main,
-      footer {
-        margin-left: 0;
+      nav.open {
+        display: flex;
       }
 
-      .main-nav {
-        max-width: 420px;
+      nav a {
+        padding: 0.8rem 0.9rem;
+      }
+
+      .menu-btn {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .about-panel,
+      .contact-card,
+      .upwork-service-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        text-align: center;
+      }
+
+      .hero-copy,
+      .hero-role {
+        margin-inline: auto;
+      }
+
+      .eyebrow,
+      .cta-row,
+      .hero-micro {
+        justify-content: center;
+      }
+
+      .profile-card {
+        width: min(340px, 100%);
         margin: 0 auto;
       }
 
-      section {
-        padding: 70px 6vw;
+      .grid-3,
+      .tool-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .about-card,
-      .contact-wrap,
-      .video-intro-grid {
-        grid-template-columns: 1fr;
+      .quick-links-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .video-shell {
-        max-width: 380px;
+      .quick-link {
+        border-bottom: 1px solid var(--border);
       }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 26px, 1120px);
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: calc(var(--header-h) + 52px);
+      }
+
+      h1 {
+        font-size: clamp(2.75rem, 15vw, 4.4rem);
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading p {
+        margin-top: 0.85rem;
+      }
+
       .grid-2,
       .grid-3,
-      .portfolio-grid {
+      .tool-groups,
+      .stats,
+      .quick-links-grid {
         grid-template-columns: 1fr;
       }
 
-      .form-grid {
+      .quick-link {
+        border-right: 0;
+      }
+
+      .quick-link:last-child {
+        border-bottom: 0;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .role-head,
+      .education-card {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+      }
+
+      .role-date {
+        white-space: normal;
+      }
+    }
+
+
+
+    @media (max-width: 820px) {
+      .case-study-content {
         grid-template-columns: 1fr;
       }
 
-      .form-field.full {
-        grid-column: auto;
+      .portfolio-gallery {
+        grid-template-columns: 1fr;
       }
 
-      .message-panel {
-        padding: 22px;
+      .case-study-visual {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .proof-grid {
+        grid-template-columns: 1fr;
       }
 
-      .message-panel-head {
+      .image-caption {
         flex-direction: column;
+        gap: 0.2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
       }
 
-      .portfolio-card img {
-        height: 230px;
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* VIDEO INTRODUCTION - intentionally preserved for recruiter visibility */
+    .intro-showcase {
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.025), transparent 70%);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .intro-video-card,
+    .intro-copy-card {
+      min-width: 0;
+    }
+
+    .intro-video-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .portrait-video-wrap {
+      width: min(100%, 360px);
+      margin-inline: auto;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #02060b;
+      border: 1px solid rgba(125, 211, 252, 0.18);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+    }
+
+    .portrait-video-wrap video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: contain;
+      background: #02060b;
+    }
+
+    .intro-video-caption {
+      margin-top: 0.9rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .intro-copy-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1.4rem, 3vw, 2.25rem);
+    }
+
+    .intro-copy-card h3 {
+      margin: 0.35rem 0 0.8rem;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      line-height: 1.2;
+    }
+
+    .intro-copy-card > p {
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
+    .intro-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin: 1.25rem 0;
+    }
+
+    .intro-highlight {
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .intro-highlight strong {
+      display: block;
+      margin-bottom: 0.15rem;
+      color: var(--text);
+    }
+
+    .intro-highlight span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .intro-transcript {
+      margin-top: 1.1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .intro-transcript summary {
+      cursor: pointer;
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .intro-transcript p {
+      margin-top: 0.8rem;
+    }
+
+    /* UPWORK PROJECT CATALOG - three services */
+    .upwork-project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .upwork-project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 1.5rem;
+    }
+
+    .upwork-project-card h3 {
+      margin: 0.45rem 0 0.8rem;
+      font-size: 1.35rem;
+      line-height: 1.28;
+    }
+
+    .upwork-project-card > p {
+      color: var(--muted);
+    }
+
+    .upwork-project-list {
+      display: grid;
+      gap: 0.65rem;
+      margin: 1.1rem 0 1.25rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .upwork-project-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    .upwork-project-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .upwork-project-card .cta-row {
+      margin-top: auto;
+      padding-top: 0.35rem;
+    }
+
+    @media (max-width: 980px) {
+      .intro-grid,
+      .upwork-project-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
+      .intro-video-card {
+        padding: 1rem;
       }
 
-      .btn {
-        width: 100%;
+      .portrait-video-wrap {
+        width: min(100%, 330px);
       }
+    }
+
+    @media (max-width: 620px) {
+      .intro-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+
+  <style>
+    /* Recruiter-optimized structure */
+    .recruiter-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .recruiter-proof {
+      border: 1px solid var(--border);
+      background: rgba(20,33,54,.6);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .recruiter-proof strong { display:block; font-size:1.05rem; margin-bottom:3px; }
+    .recruiter-proof span { color:var(--muted); font-size:.88rem; line-height:1.4; }
+
+    .focus-grid {
+      display:grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+    .focus-card { padding:24px; }
+    .focus-card .focus-icon {
+      width:42px; height:42px; display:grid; place-items:center;
+      border-radius:12px; margin-bottom:16px;
+      border:1px solid rgba(56,189,248,.28);
+      background:rgba(56,189,248,.08);
+      color:var(--accent-2); font-weight:800;
+    }
+    .focus-card p { color:var(--muted); }
+    .focus-card .tag-list { margin-top:16px; }
+
+    .featured-grid {
+      display:grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap:18px;
+      align-items:stretch;
+    }
+    .featured-card { overflow:hidden; display:flex; flex-direction:column; min-height:100%; }
+    .featured-media {
+      aspect-ratio:16/10; overflow:hidden; background:#0b1220;
+      border-bottom:1px solid var(--border);
+    }
+    .featured-media img { width:100%; height:100%; object-fit:cover; display:block; }
+    .featured-body { padding:22px; display:flex; flex-direction:column; gap:12px; flex:1; }
+    .featured-body p { color:var(--muted); }
+    .featured-body .cta-row { margin-top:auto; }
+    .featured-placeholder {
+      min-height:100%; display:grid; place-items:center; padding:34px;
+      background:linear-gradient(145deg, rgba(56,189,248,.13), rgba(99,102,241,.08));
+      text-align:center;
+    }
+    .featured-placeholder strong { font-size:2rem; display:block; margin-bottom:6px; }
+    .featured-placeholder span { color:var(--muted); }
+
+    .secondary-work {
+      margin-top:18px; padding:18px 20px; display:flex; align-items:center;
+      justify-content:space-between; gap:16px; flex-wrap:wrap;
+    }
+    .secondary-work p { color:var(--muted); margin:4px 0 0; }
+
+    .upwork-compact-grid {
+      display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;
+    }
+    .upwork-compact-card { padding:22px; display:flex; flex-direction:column; gap:12px; }
+    .upwork-compact-card p { color:var(--muted); }
+    .upwork-compact-card ul { margin:0; padding-left:18px; color:var(--muted); }
+    .upwork-compact-card li + li { margin-top:5px; }
+    .upwork-compact-card .cta-row { margin-top:auto; padding-top:6px; }
+
+    .experience-timeline.compact .role-card { padding:22px; }
+    .experience-timeline.compact .role-card ul { margin-top:14px; }
+    .experience-timeline.compact .role-card li { margin-bottom:6px; }
+
+    .tools-compact {
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;
+    }
+    .tools-compact .card { padding:20px; }
+    .tools-compact h3 { font-size:1rem; margin-bottom:12px; }
+
+    .education-inline {
+      margin-top:18px; padding:16px 18px; border:1px solid var(--border);
+      border-radius:14px; color:var(--muted); font-size:.92rem;
+    }
+    .education-inline strong { color:var(--text); }
+
+    .section-heading.tight { margin-bottom:26px; }
+    .section-heading.tight p { max-width:620px; }
+
+    @media (max-width: 980px) {
+      .recruiter-strip { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .focus-grid,.featured-grid,.upwork-compact-grid { grid-template-columns:1fr; }
+      .tools-compact { grid-template-columns:1fr; }
+    }
+    @media (max-width: 620px) {
+      .recruiter-strip { grid-template-columns:1fr 1fr; }
+      .hero .cta-row .btn { width:100%; justify-content:center; }
+      .secondary-work { align-items:flex-start; }
     }
   </style>
 </head>
-
 <body>
-  <!-- PROFILE / SOCIAL / NAVIGATION -->
-  <aside class="sidebar">
-    <div class="profile">
-      <!-- Your existing GitHub file: profile.jpg -->
-      <div class="profile-photo-wrap">
-        <img id="profilePhoto" src="profile.jpg" alt="Cycan Clyde Seno" class="profile-photo" />
-        <button
-          id="profileEditButton"
-          class="profile-edit-button edit-only"
-          type="button"
-          aria-label="Change profile photo"
-          title="Change profile photo"
-        >
-          <i class="fa-solid fa-camera"></i>
-        </button>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <input id="profilePhotoInput" type="file" accept="image/*" hidden />
-
-      <div id="profileEditor" class="profile-editor">
-        <strong>Profile Photo Editor</strong>
-        <p>Choose a photo and I will crop it square and compress it for your portfolio. Nothing is uploaded anywhere from this page.</p>
-        <div class="profile-editor-actions">
-          <button id="chooseProfilePhoto" class="editor-action" type="button">
-            <i class="fa-solid fa-image"></i> Choose New Photo
-          </button>
-          <a id="downloadProfilePhoto" class="editor-action primary" href="#" download="profile.jpg" hidden>
-            <i class="fa-solid fa-download"></i> Download Optimized profile.jpg
-          </a>
-          <button id="resetProfilePreview" class="editor-action" type="button" hidden>
-            <i class="fa-solid fa-arrow-rotate-left"></i> Reset Preview
-          </button>
-        </div>
-        <div id="profileEditorStatus" class="profile-editor-status"></div>
-      </div>
-
-      <h1>Cycan Clyde Seno</h1>
-
-      <!-- Social icons: Facebook -> Instagram -> LinkedIn -> TikTok -->
-      <div class="social-links" aria-label="Social media links">
-        <a
-          href="https://www.facebook.com/cycanclydeseno/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          title="Facebook"
-        >
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-
-        <a
-          href="https://www.instagram.com/saican.supremo?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw=="
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          title="Instagram"
-        >
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/cycanclydeseno/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          title="LinkedIn"
-        >
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-
-        <a
-          href="https://www.tiktok.com/@saikantvofficial?is_from_webapp=1&amp;sender_device=pc"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="TikTok"
-          title="TikTok"
-        >
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
-      </div>
+  <header>
+    <div class="container nav-wrap">
+      <a class="logo" href="#top" aria-label="Cycan Clyde Seno home">
+        <span class="logo-mark">CS</span>
+        <span>Cycan Clyde Seno</span>
+      </a>
+      <nav id="site-nav" aria-label="Primary navigation">
+        <a href="#intro">Video Intro</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#work">Work</a>
+        <a href="#upwork">Upwork</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav">☰</button>
     </div>
+  </header>
 
-    <!-- Vertical navigation in the exact order requested -->
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="#about"><i class="fa-solid fa-user"></i> About</a>
-      <a href="#intro"><i class="fa-solid fa-circle-play"></i> Video Intro</a>
-      <a href="#resume"><i class="fa-solid fa-file-lines"></i> Resume</a>
-      <a href="#portfolio"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
-      <a href="#services"><i class="fa-solid fa-layer-group"></i> Services</a>
-      <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-    </nav>
-
-    <div class="sidebar-note">
-      Customer Success · Digital Marketing · Social Media · SEO · Websites
-    </div>
-  </aside>
-
-  <main>
-    <!-- HOME -->
-    <section id="home">
-      <div class="section-inner hero">
-        <div class="hero-kicker">
-          <i class="fa-solid fa-circle-check"></i>
-          Available for digital and remote opportunities
-        </div>
-
-        <h2>
-          Customer success, marketing, content &
-          <span>websites that work.</span>
-        </h2>
-
-        <p>
-          I’m Cycan Clyde Seno, a Customer Success and Digital Marketing professional
-          with 10+ years of experience supporting customers and helping brands strengthen
-          their digital presence. My work spans social media operations, SEO-focused content,
-          video and design, AI-assisted workflows, and building functional business and
-          portfolio websites with HTML, CSS, GitHub, and GitHub Pages.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-primary">
-            <i class="fa-solid fa-briefcase"></i> View My Work
-          </a>
-          <a href="#intro" class="btn btn-secondary">
-            <i class="fa-solid fa-circle-play"></i> Watch Introduction
-          </a>
-          <a href="#services" class="btn btn-secondary">
-            <i class="fa-solid fa-code"></i> Website Capabilities
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            <i class="fa-solid fa-paper-plane"></i> Contact Me
-          </a>
-        </div>
-
-        <div class="skill-tags" style="margin-top: 28px; max-width: 900px;">
-          <span class="skill-tag">Customer Success</span>
-          <span class="skill-tag">Digital Marketing</span>
-          <span class="skill-tag">Social Media</span>
-          <span class="skill-tag">SEO Content</span>
-          <span class="skill-tag">Website Development</span>
-          <span class="skill-tag">GitHub Pages</span>
-          <span class="skill-tag">AI Workflows</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-inner">
-        <span class="section-label">About Me</span>
-        <h2 class="section-title">Customer-focused. Digital-first. Hands-on.</h2>
-        <p class="section-intro">
-          My background combines customer success, social media, digital marketing,
-          SEO content support, visual production, and practical website development.
-          I bring both customer-facing experience and hands-on digital execution, helping
-          businesses improve the experience they provide and the way they present themselves online.
-        </p>
-
-        <div class="about-card">
-          <div class="about-main">
-            <h3>Professional Profile</h3>
-            <p>
-              I have worked across customer support, client service, social media
-              management, content production, video, graphic design, and digital
-              operations. My experience includes troubleshooting, ticket handling,
-              webinars, one-on-one coaching, publishing high-volume social content,
-              community engagement, creative review, and paid social support.
-            </p>
-            <p>
-              I also build, publish, and maintain functional websites using HTML, CSS,
-              GitHub, and GitHub Pages. I can create business websites, portfolio sites,
-              landing-style pages, service showcases, and contact-focused pages, then
-              manage content updates, images, links, navigation, deployment, and common
-              troubleshooting issues after launch.
-            </p>
-
-            <div class="quick-facts">
-              <div><strong>Location</strong><span>Cebu, Philippines</span></div>
-              <div><strong>Email</strong><span>cycanseno07@gmail.com</span></div>
-              <div><strong>Focus</strong><span>Customer Success, Digital Marketing, Social Media & Web</span></div>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Open to remote opportunities · Cebu, Philippines · UTC+8</div>
+            <h1><span class="gradient-text">Cycan Clyde Seno</span></h1>
+            <p class="hero-role">Customer Success · Social Media Operations · Digital Support</p>
+            <p class="hero-copy">10+ years of customer-facing and digital experience across customer success, technical support, social media operations, content production, CRM workflows, and practical website support.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#work">View Selected Work <span aria-hidden="true">↓</span></a>
+              <a class="btn" href="#intro">Watch Introduction <span aria-hidden="true">▶</span></a>
+              <a class="btn" href="https://drive.google.com/file/d/11LP8-N7sU12HJKHjTY7__1N6DCaB-yQ0/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Resume <span aria-hidden="true">↗</span></a>
+              <a class="btn" href="#contact">Contact Me <span aria-hidden="true">↘</span></a>
+            </div>
+            <div class="hero-micro">
+              <a href="mailto:cycanseno07@gmail.com">cycanseno07@gmail.com</a>
+              <a href="tel:+639608202708">+63 960 820 2708</a>
+              <a href="https://www.linkedin.com/in/cycanclydeseno/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
           </div>
-
-          <div class="about-skills">
-            <h3>Core Skills</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Customer Success</span>
-              <span class="skill-tag">Customer Support</span>
-              <span class="skill-tag">Social Media Management</span>
-              <span class="skill-tag">Digital Marketing</span>
-              <span class="skill-tag">SEO Content</span>
-              <span class="skill-tag">Content Publishing</span>
-              <span class="skill-tag">Community Engagement</span>
-              <span class="skill-tag">Video Editing</span>
-              <span class="skill-tag">Graphic Design</span>
-              <span class="skill-tag">HTML / CSS</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">GitHub Pages</span>
-              <span class="skill-tag">Business Websites</span>
-              <span class="skill-tag">Portfolio Websites</span>
-              <span class="skill-tag">Responsive Layouts</span>
-              <span class="skill-tag">Website Deployment</span>
-              <span class="skill-tag">Website Maintenance</span>
-              <span class="skill-tag">Website Troubleshooting</span>
-              <span class="skill-tag">AI-Assisted Workflows</span>
-              <span class="skill-tag">CRM Platforms</span>
+          <aside class="profile-card reveal" aria-label="Profile">
+            <img class="profile-photo" src="profile.jpg" alt="Portrait of Cycan Clyde Seno" />
+            <div class="profile-meta">
+              <strong>Customer-facing + hands-on digital</strong>
+              <span>Support · CRM · Social · Content · Web</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIDEO INTRODUCTION -->
-    <section id="intro">
-      <div class="section-inner">
-        <span class="section-label">Video Introduction</span>
-        <h2 class="section-title">Meet me in under 90 seconds.</h2>
-        <p class="section-intro">
-          A short introduction to my background in customer success, customer service,
-          technical support, social media, digital operations, and website development.
-        </p>
-
-        <div class="video-intro-grid">
-          <div class="video-shell">
-            <video
-              controls
-              playsinline
-              preload="metadata"
-              aria-label="Video introduction by Cycan Clyde Seno"
-            >
-              <source src="intro-video.mp4.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
-            <div class="video-file-note">
-              Video file: <strong>intro-video.mp4.mp4</strong>
-            </div>
-          </div>
-
-          <aside class="video-intro-copy">
-            <h3>Quick professional introduction</h3>
-            <p>
-              I use this short video to give employers a quick sense of how I communicate
-              and the experience I can bring to a team.
-            </p>
-
-            <ul class="video-points">
-              <li><i class="fa-solid fa-check"></i><span>10+ years of customer and client-facing experience</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Customer Success, Customer Service & Technical Support</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Social Media, Digital Marketing & Content Operations</span></li>
-              <li><i class="fa-solid fa-check"></i><span>Business and portfolio websites using HTML, CSS, GitHub & GitHub Pages</span></li>
-            </ul>
-
-            <a href="#contact" class="btn btn-primary">
-              <i class="fa-solid fa-paper-plane"></i> Let’s Connect
-            </a>
-
-            <details class="video-transcript">
-              <summary>Read suggested transcript</summary>
-              <p>
-                Hi, I’m Cycan Clyde Seno. I have more than 10 years of experience across customer
-                service, customer success, technical support, social media, and digital operations.
-                I’ve supported customers through phone, email, chat, webinars, and one-on-one coaching,
-                and I also have hands-on experience with content, digital marketing, and website
-                development using HTML, CSS, GitHub, and GitHub Pages. I’m currently open to opportunities
-                where I can contribute my customer-facing, technical, digital, and communication skills.
-                Thanks for visiting my portfolio, and I’d be happy to connect.
-              </p>
-            </details>
           </aside>
         </div>
-      </div>
-    </section>
 
-    <!-- RESUME -->
-    <section id="resume">
-      <div class="section-inner">
-        <span class="section-label">Resume</span>
-        <h2 class="section-title">Professional Experience</h2>
-        <p class="section-intro">
-          Experience spanning customer success, social media operations, digital marketing,
-          SEO content, design, client service, and practical website development.
-        </p>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <span class="date">2025 - September 13, 2026</span>
-            <h3>Social Media Manager</h3>
-            <div class="company">Exchange Life</div>
-            <ul>
-              <li>Managed multiple creator accounts across Instagram, TikTok, and Facebook.</li>
-              <li>Published approximately 2-3 submitted videos per account per day.</li>
-              <li>Reviewed creative assets, captions, titles, descriptions, and hashtags before publishing.</li>
-              <li>Monitored comments and supported audience/community engagement.</li>
-              <li>Supported paid social campaigns through AdsNova.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-item">
-            <span class="date">2025 - 2026</span>
-            <h3>Customer Success / Video Specialist</h3>
-            <div class="company">BIGVU</div>
-            <ul>
-              <li>Provided customer support through tickets, meetings, webinars, and one-on-one coaching.</li>
-              <li>Helped customers use video creation and content-production tools more effectively.</li>
-              <li>Supported video editing, thumbnails, graphics, carousels, and publishing preparation.</li>
-              <li>Assisted with content titles, descriptions, hashtags, and digital discoverability.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-item">
-            <span class="date">2024 - 2025</span>
-            <h3>Customer Service Executive</h3>
-            <div class="company">igloohome</div>
-            <ul>
-              <li>Supported customers through phone, email, and chat.</li>
-              <li>Troubleshot product, account, order, warranty, refund, and technical concerns.</li>
-              <li>Managed follow-ups and documented cases using customer support systems.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-item">
-            <span class="date">2017 - 2024</span>
-            <h3>Client Service Professional</h3>
-            <div class="company">Manulife</div>
-            <ul>
-              <li>Provided high-volume customer service for approximately seven years.</li>
-              <li>Assisted customers with health and dental insurance questions, policies, benefits, and coverage.</li>
-              <li>Explained complex information clearly and worked toward appropriate resolutions.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-item">
-            <span class="date">2014 - 2017</span>
-            <h3>Senior Graphic Designer</h3>
-            <div class="company">Wikreate</div>
-            <ul>
-              <li>Created digital and print marketing materials for business and promotional use.</li>
-              <li>Worked with Adobe Photoshop, Adobe Illustrator, and CorelDRAW.</li>
-              <li>Supported marketing campaigns with branded visual assets.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="resume-download">
-          <a
-            href="https://drive.google.com/file/d/1K2D2vBaZCrIqCcZP0DohQuPJSERWkTdM/view?usp=sharing"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-solid fa-file-arrow-down"></i>
-            View Updated Resume
-          </a>
+        <div class="recruiter-strip reveal" aria-label="Recruiter quick scan">
+          <div class="recruiter-proof"><strong>10+ years</strong><span>Customer service, client support, digital and creative work</span></div>
+          <div class="recruiter-proof"><strong>Multi-channel</strong><span>Phone, email, chat, webinars and one-on-one support</span></div>
+          <div class="recruiter-proof"><strong>CRM ready</strong><span>Salesforce, HubSpot, Zendesk, Freshdesk, Crisp and Periskope</span></div>
+          <div class="recruiter-proof"><strong>3 social platforms</strong><span>Instagram, Facebook and TikTok operations</span></div>
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-      <div class="section-inner">
-        <span class="section-label">Portfolio</span>
-        <h2 class="section-title">Selected Work</h2>
-        <p class="section-intro">
-          Samples from social media operations, customer success/video work,
-          graphic design, and website development.
-        </p>
-
-        <div class="portfolio-grid">
-          <article class="portfolio-card">
-            <img
-              src="social-media-operations.png"
-              alt="Social Media Operations work sample"
-              loading="lazy"
-            />
-            <div class="portfolio-content">
-              <h3>Social Media Operations</h3>
-              <p>
-                Multi-account publishing across Instagram, TikTok, and Facebook,
-                including content review, daily posting, community engagement,
-                and paid social support.
-              </p>
-              <div class="portfolio-links">
-                <a href="#services" class="btn btn-secondary">View Capabilities</a>
-              </div>
+    <section id="intro" class="intro-showcase">
+      <div class="container">
+        <div class="section-heading tight reveal">
+          <div>
+            <div class="section-kicker">Video Introduction</div>
+            <h2>Meet me before the interview.</h2>
+          </div>
+          <p>A short introduction so recruiters can quickly hear how I communicate and understand the experience I bring.</p>
+        </div>
+        <div class="intro-grid">
+          <div class="card intro-video-card reveal">
+            <div class="portrait-video-wrap">
+              <video controls playsinline preload="metadata" aria-label="Video introduction by Cycan Clyde Seno">
+                <source src="intro-video.mp4.mp4" type="video/mp4" />
+                <source src="intro-video.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
             </div>
-          </article>
-
-          <article class="portfolio-card">
-            <img
-              src="BIGVU Screenshot 01.png"
-              alt="BIGVU customer success and video work sample"
-              loading="lazy"
-            />
-            <div class="portfolio-content">
-              <h3>BIGVU Work Samples</h3>
-              <p>
-                Customer success, video creation, content support, webinars,
-                coaching, design, and publishing assistance.
-              </p>
-              <div class="portfolio-links">
-                <a href="#contact" class="btn btn-secondary">Ask About This Work</a>
-              </div>
+            <div class="intro-video-caption">Professional video introduction · portrait format</div>
+          </div>
+          <article class="card intro-copy-card reveal">
+            <div class="eyebrow">Why this matters</div>
+            <h3>Communication is part of my work.</h3>
+            <p>My background includes customer calls, email and chat support, webinars, one-on-one coaching, technical troubleshooting, social media operations, and client communication.</p>
+            <div class="intro-highlights" aria-label="Video introduction highlights">
+              <div class="intro-highlight"><strong>Customer Success</strong><span>Support, onboarding, follow-up and troubleshooting</span></div>
+              <div class="intro-highlight"><strong>Social Operations</strong><span>Publishing, community management and content QA</span></div>
+              <div class="intro-highlight"><strong>Technical Confidence</strong><span>SaaS, CRM, HTML/CSS and GitHub Pages</span></div>
+              <div class="intro-highlight"><strong>Professional English</strong><span>Phone, written support, webinars and client conversations</span></div>
             </div>
-          </article>
-
-          <article class="portfolio-card">
-            <div class="portfolio-content">
-              <h3>Graphic Design Showcase</h3>
-              <p>
-                Digital and print design experience including branded marketing
-                materials, graphics, layouts, and visual content.
-              </p>
-              <div class="portfolio-links">
-                <a
-                  href="https://www.behance.net/cycanseno?tracking_source=search_projects%7Csandugo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-primary"
-                >
-                  <i class="fa-brands fa-behance"></i> View Behance
-                </a>
-
-                <a
-                  href="https://www.facebook.com/profile.php?id=100063829038641"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-secondary"
-                >
-                  View Wikreate
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="portfolio-card">
-            <div class="portfolio-content">
-              <h3>Website Development & Digital Presence</h3>
-              <p>
-                I build and publish working business and portfolio websites using
-                HTML, CSS, GitHub, and GitHub Pages. My website work includes responsive
-                page layouts, clear navigation, service and portfolio sections, social
-                links, contact paths, image and content management, deployment, updates,
-                and troubleshooting common publishing issues.
-              </p>
-              <p>
-                <strong>Proof of capability:</strong> this portfolio is itself a live
-                example of the type of website I can build and maintain.
-              </p>
-              <div class="portfolio-links">
-                <a href="#home" class="btn btn-primary">
-                  <i class="fa-solid fa-globe"></i> View This Site as a Web Sample
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                  <i class="fa-solid fa-paper-plane"></i> Discuss a Website Project
-                </a>
-              </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#experience">See Experience <span aria-hidden="true">↓</span></a>
+              <a class="btn" href="#contact">Let’s Connect <span aria-hidden="true">↘</span></a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="section-inner">
-        <span class="section-label">Services</span>
-        <h2 class="section-title">How I Can Help</h2>
-        <p class="section-intro">
-          Practical support for businesses, creators, and teams that need help
-          with customers, content, digital operations, and online presence.
-        </p>
-
-        <div class="grid grid-3">
-          <div class="card">
-            <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+    <section id="expertise">
+      <div class="container">
+        <div class="section-heading tight reveal">
+          <div>
+            <div class="section-kicker">Core Expertise</div>
+            <h2>Three areas I can contribute from day one.</h2>
+          </div>
+          <p>Focused around the work employers most often hire me for, with supporting creative and technical skills underneath.</p>
+        </div>
+        <div class="focus-grid">
+          <article class="card focus-card reveal">
+            <div class="focus-icon">01</div>
             <h3>Customer Success & Support</h3>
-            <p>
-              Customer communication, troubleshooting, onboarding, ticket handling,
-              webinars, coaching, follow-ups, and CRM-based support.
-            </p>
-          </div>
+            <p>Customer communication, troubleshooting, ticket handling, follow-ups, onboarding, coaching, and organized CRM documentation.</p>
+            <div class="tag-list"><span class="tag">Email & Chat</span><span class="tag">Phone Support</span><span class="tag">CRM</span><span class="tag">SaaS</span></div>
+          </article>
+          <article class="card focus-card reveal">
+            <div class="focus-icon">02</div>
+            <h3>Social Media & Content Operations</h3>
+            <p>Multi-account publishing, content review, scheduling, community engagement, captions, hashtags, and paid-social workflow support.</p>
+            <div class="tag-list"><span class="tag">Instagram</span><span class="tag">Facebook</span><span class="tag">TikTok</span><span class="tag">Content QA</span></div>
+          </article>
+          <article class="card focus-card reveal">
+            <div class="focus-icon">03</div>
+            <h3>Digital & Website Support</h3>
+            <p>Practical website building and maintenance with HTML, CSS, GitHub and GitHub Pages, plus digital content, design and AI-assisted workflows.</p>
+            <div class="tag-list"><span class="tag">HTML/CSS</span><span class="tag">GitHub Pages</span><span class="tag">Design</span><span class="tag">AI Tools</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <div class="card">
-            <div class="service-icon"><i class="fa-solid fa-share-nodes"></i></div>
-            <h3>Social Media Management</h3>
-            <p>
-              Publishing, scheduling, creative review, captions, hashtags,
-              community engagement, and multi-account social media operations.
-            </p>
+    <section id="work">
+      <div class="container">
+        <div class="section-heading tight reveal">
+          <div>
+            <div class="section-kicker">Selected Work</div>
+            <h2>Proof first, details second.</h2>
           </div>
+          <p>Three examples that show the range of my work without making recruiters scroll through every asset.</p>
+        </div>
 
-          <div class="card">
-            <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
-            <h3>Digital Marketing & SEO Content</h3>
-            <p>
-              SEO-conscious titles, descriptions, captions, content discoverability,
-              digital publishing, and paid social campaign support.
-            </p>
-          </div>
+        <div class="featured-grid">
+          <article class="card featured-card reveal">
+            <a class="featured-media" href="social-media-operations.png" target="_blank" rel="noopener noreferrer" aria-label="Open Social Media Operations work sample">
+              <img src="social-media-operations.png" alt="Social Media Operations case study" loading="lazy" decoding="async" />
+            </a>
+            <div class="featured-body">
+              <div class="eyebrow">Social Media Operations</div>
+              <h3>Daily Multi-Platform Publishing</h3>
+              <p>Managed multiple creator accounts across Instagram, TikTok and Facebook, publishing about 2–3 submitted videos per account per day while following account-specific playbooks.</p>
+              <div class="tag-list"><span class="tag">Publishing</span><span class="tag">Community</span><span class="tag">Paid Social</span></div>
+              <div class="cta-row"><a class="btn btn-primary" href="social-media-operations.png" target="_blank" rel="noopener noreferrer">Open Case Study ↗</a></div>
+            </div>
+          </article>
 
-          <div class="card">
-            <div class="service-icon"><i class="fa-solid fa-video"></i></div>
-            <h3>Video & Content Production</h3>
-            <p>
-              Short-form content, video editing, thumbnails, carousels,
-              visual assets, and publishing preparation.
-            </p>
-          </div>
+          <article class="card featured-card reveal">
+            <a class="featured-media" href="BIGVU%20Screenshot%2001.png" target="_blank" rel="noopener noreferrer" aria-label="Open BIGVU work sample">
+              <img src="BIGVU%20Screenshot%2001.png" alt="BIGVU customer success and content work sample" loading="lazy" decoding="async" />
+            </a>
+            <div class="featured-body">
+              <div class="eyebrow">BIGVU · Customer Success & Video</div>
+              <h3>SaaS Support + Content Production</h3>
+              <p>Supported customers through tickets, webinars and one-on-one coaching while also producing video, creative and publishing assets.</p>
+              <div class="tag-list"><span class="tag">SaaS Support</span><span class="tag">Webinars</span><span class="tag">Video</span></div>
+              <div class="cta-row"><a class="btn btn-primary" href="https://drive.google.com/drive/folders/1xv_KTCaFQhkV6Uty_5ZxX5qX-ct57q0P?usp=drive_link" target="_blank" rel="noopener noreferrer">View BIGVU Samples ↗</a></div>
+            </div>
+          </article>
 
-          <div class="card">
-            <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-            <h3>Graphic Design</h3>
-            <p>
-              Branded graphics, marketing materials, digital assets,
-              image editing, and design support.
-            </p>
-          </div>
+          <article class="card featured-card reveal">
+            <div class="featured-media featured-placeholder" aria-hidden="true"><div><strong>&lt;/&gt;</strong><span>HTML · CSS · GitHub Pages</span></div></div>
+            <div class="featured-body">
+              <div class="eyebrow">Website & Digital Presence</div>
+              <h3>This Portfolio Is Also a Work Sample</h3>
+              <p>I build and maintain practical business and portfolio websites with responsive sections, navigation, media, links, deployment and ongoing content updates.</p>
+              <div class="tag-list"><span class="tag">HTML/CSS</span><span class="tag">GitHub</span><span class="tag">Responsive</span></div>
+              <div class="cta-row"><a class="btn btn-primary" href="#top">View This Site as a Sample ↑</a></div>
+            </div>
+          </article>
+        </div>
 
-          <div class="card">
-            <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-            <h3>Website Development & Digital Presence</h3>
-            <p>
-              Responsive business, portfolio, and landing-style websites built with
-              HTML, CSS, GitHub, and GitHub Pages. I can structure services and work
-              samples clearly, connect social/contact links, publish the site, handle
-              content updates, and troubleshoot common website issues.
-            </p>
+        <div class="card secondary-work reveal">
+          <div><strong>Additional creative work</strong><p>Graphic design, branded marketing materials and visual content from my earlier design background.</p></div>
+          <div class="cta-row">
+            <a class="btn" href="https://www.behance.net/cycanseno?tracking_source=search_projects%7Csandugo" target="_blank" rel="noopener noreferrer">Behance ↗</a>
+            <a class="btn" href="https://www.facebook.com/profile.php?id=100063829038641" target="_blank" rel="noopener noreferrer">Wikreate ↗</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-inner">
-        <span class="section-label">Contact</span>
-        <h2 class="section-title">Let’s Connect</h2>
-        <p class="section-intro">
-          Interested in working together, discussing a role, or building a digital
-          presence for your business? You can reach me through the details below.
-        </p>
-
-        <div class="contact-wrap">
-          <div class="contact-details">
-            <a class="contact-row" href="mailto:cycanseno07@gmail.com">
-              <i class="fa-solid fa-envelope"></i>
-              <div>
-                <small>Email</small>
-                <strong>cycanseno07@gmail.com</strong>
-              </div>
-            </a>
-
-            <a class="contact-row" href="tel:+639608202708">
-              <i class="fa-solid fa-phone"></i>
-              <div>
-                <small>Phone</small>
-                <strong>+63 960-820-2708</strong>
-              </div>
-            </a>
-
-            <a
-              class="contact-row"
-              href="https://www.linkedin.com/in/cycanclydeseno/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-linkedin-in"></i>
-              <div>
-                <small>LinkedIn</small>
-                <strong>linkedin.com/in/cycanclydeseno</strong>
-              </div>
-            </a>
+    <section id="upwork" class="work-showcase">
+      <div class="container">
+        <div class="section-heading tight reveal">
+          <div>
+            <div class="section-kicker">Available on Upwork</div>
+            <h2>Three services clients can hire directly.</h2>
           </div>
-
-          <div class="contact-cta">
-            <h3>Need a clear, professional online presence?</h3>
-            <p>
-              I can build and maintain a functional portfolio or business website that
-              presents your services, work, social links, and contact details clearly -
-              then publish it through GitHub Pages and keep the content up to date.
-            </p>
-            <a href="mailto:cycanseno07@gmail.com" class="btn btn-primary">
-              <i class="fa-solid fa-paper-plane"></i> Send Me an Email
-            </a>
-          </div>
+          <p>These complement the employment-focused portfolio without taking over the page.</p>
         </div>
+        <div class="upwork-compact-grid">
+          <article class="card upwork-compact-card reveal">
+            <div class="eyebrow">Social Media</div>
+            <h3>Content Publishing & Community Management</h3>
+            <p>Reliable day-to-day support for businesses that need content organized and published consistently.</p>
+            <ul><li>Instagram, Facebook and TikTok publishing</li><li>Caption and hashtag support</li><li>Basic community monitoring</li></ul>
+            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/marketing-social-media-content-publishing-and-community-management-2102765155177128768?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
+          </article>
+          <article class="card upwork-compact-card reveal">
+            <div class="eyebrow">CRM & Ticket Operations</div>
+            <h3>CRM Management & Ticket Organization</h3>
+            <p>Structured support operations for clean records, organized tickets and dependable follow-up tracking.</p>
+            <ul><li>CRM notes and customer records</li><li>Ticket categorization and status tracking</li><li>Follow-up and escalation documentation</li></ul>
+            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/admin-customer-support-professional-crm-management-and-customer-support-ticket-organization-2102760889744647923?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
+          </article>
+          <article class="card upwork-compact-card reveal">
+            <div class="eyebrow">Email & Chat Support</div>
+            <h3>Professional Email & Chat Customer Support</h3>
+            <p>Professional written customer support for product, account, order, service and troubleshooting inquiries.</p>
+            <ul><li>Email inbox and live-chat assistance</li><li>Follow-ups and escalation support</li><li>Clear customer-friendly responses</li></ul>
+            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/admin-customer-support-professional-email-and-chat-customer-support-for-your-business-2102750094642611877?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <div class="message-panel" id="leave-message">
-          <div class="message-panel-head">
-            <div>
-              <span class="section-label">Let’s Connect</span>
-              <h3>Interested in working together?</h3>
-              <p>
-                If you’re hiring for a role that matches my experience, feel free to send me a message.
-                I’d be happy to connect and discuss how I can contribute to your team.
-              </p>
-            </div>
-            <a
-              href="https://www.linkedin.com/in/cycanclydeseno/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-            >
-              <i class="fa-brands fa-linkedin-in"></i> Connect on LinkedIn
-            </a>
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading tight reveal">
+          <div>
+            <div class="section-kicker">Professional Experience</div>
+            <h2>The experience behind the portfolio.</h2>
           </div>
+          <p>Condensed for faster scanning while keeping the full career path visible.</p>
+        </div>
+        <div class="experience-timeline compact">
+          <article class="card role-card reveal">
+            <div class="role-head"><div><div class="role-company">Social Media Operations</div><h3 class="role-title">Social Media Manager</h3></div><span class="role-date">2025 – Sep 13, 2026</span></div>
+            <ul><li>Managed multiple creator accounts across Instagram, TikTok and Facebook with consistent day-to-day publishing.</li><li>Published approximately 2–3 submitted videos per account per day while following creator-specific folders, playbooks and requirements.</li><li>Reviewed assets, monitored comments and supported paid-social workflows through AdsNova.</li></ul>
+          </article>
+          <article class="card role-card reveal">
+            <div class="role-head"><div><div class="role-company">BIGVU</div><h3 class="role-title">Customer Success / Video Specialist</h3></div><span class="role-date">2025 – 2026</span></div>
+            <ul><li>Supported customers through tickets, webinars and one-on-one coaching in a SaaS environment.</li><li>Produced and prepared video, thumbnails, graphics, carousels and publishing assets.</li><li>Helped users understand platform workflows and resolve product-related issues.</li></ul>
+          </article>
+          <article class="card role-card reveal">
+            <div class="role-head"><div><div class="role-company">igloohome Inc.</div><h3 class="role-title">Customer Service Executive</h3></div><span class="role-date">2024 – 2025</span></div>
+            <ul><li>Provided phone, email and chat support for product, account, order, warranty, refund and troubleshooting concerns.</li><li>Coordinated follow-ups, appointments and escalations with internal and third-party teams.</li></ul>
+          </article>
+          <article class="card role-card reveal">
+            <div class="role-head"><div><div class="role-company">Manulife Business Processing Services</div><h3 class="role-title">Client Service Professional</h3></div><span class="role-date">2017 – 2024</span></div>
+            <ul><li>Delivered high-volume client service and explained policy coverage, benefits and service options clearly.</li><li>Maintained accurate records, handled follow-ups and protected confidential customer information.</li></ul>
+          </article>
+          <article class="card role-card reveal">
+            <div class="role-head"><div><div class="role-company">Wikreate Advertising Services</div><h3 class="role-title">Senior Graphic Designer</h3></div><span class="role-date">2014 – 2017</span></div>
+            <ul><li>Created brochures, banners, presentations and branded marketing materials.</li><li>Worked with Adobe Photoshop, Illustrator and CorelDRAW for digital and print design.</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <form
-            class="message-form"
-            action="https://formsubmit.co/cycanseno07@gmail.com"
-            method="POST"
-          >
-            <input type="hidden" name="_subject" value="New employer message from Cycan's portfolio" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+    <section id="tools">
+      <div class="container">
+        <div class="section-heading tight reveal">
+          <div><div class="section-kicker">Tools & Platforms</div><h2>Keywords recruiters can scan quickly.</h2></div>
+          <p>Grouped by workflow instead of giving every tool its own large card.</p>
+        </div>
+        <div class="tools-compact">
+          <article class="card reveal"><h3>CRM & Customer Support</h3><div class="tag-list"><span class="tag">Salesforce</span><span class="tag">HubSpot CRM</span><span class="tag">Zendesk</span><span class="tag">Freshdesk</span><span class="tag">Crisp</span><span class="tag">Periskope CRM</span><span class="tag">Microsoft Teams</span><span class="tag">Zoom</span></div></article>
+          <article class="card reveal"><h3>Social, Creative, Web & AI</h3><div class="tag-list"><span class="tag">Instagram</span><span class="tag">Facebook</span><span class="tag">TikTok</span><span class="tag">AdsNova</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">HTML/CSS</span><span class="tag">GitHub Pages</span><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Grok</span></div></article>
+        </div>
+      </div>
+    </section>
 
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="visitorName">Name *</label>
-                <input
-                  id="visitorName"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  autocomplete="name"
-                  required
-                />
-              </div>
-
-              <div class="form-field">
-                <label for="visitorEmail">Email *</label>
-                <input
-                  id="visitorEmail"
-                  name="email"
-                  type="email"
-                  placeholder="you@company.com"
-                  autocomplete="email"
-                  required
-                />
-              </div>
-
-              <div class="form-field">
-                <label for="visitorCompany">Company</label>
-                <input
-                  id="visitorCompany"
-                  name="company"
-                  type="text"
-                  placeholder="Company name"
-                  autocomplete="organization"
-                />
-              </div>
-
-              <div class="form-field">
-                <label for="visitorRole">Role / Opportunity</label>
-                <input
-                  id="visitorRole"
-                  name="role_or_opportunity"
-                  type="text"
-                  placeholder="e.g. Customer Success Specialist"
-                />
-              </div>
-
-
-              <div class="form-field full">
-                <label for="visitorMessage">Message *</label>
-                <textarea
-                  id="visitorMessage"
-                  name="message"
-                  placeholder="Tell me briefly about the role or opportunity."
-                  required
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="message-actions">
-              <button type="submit" class="btn btn-primary">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
-              </button>
-              <a href="mailto:cycanseno07@gmail.com" class="btn btn-secondary">
-                <i class="fa-solid fa-envelope"></i> Email Me Directly
-              </a>
-            </div>
-
-            <p class="message-note">
-              <i class="fa-solid fa-lock"></i>
-              Your message is sent privately to my email and is never displayed publicly on this website.
-            </p>
-          </form>
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>Interested in working together?</h2>
+            <p>I’m open to customer success, customer service, technical support, social media, digital operations and related remote opportunities.</p>
+            <div class="cta-row"><a class="btn btn-primary" href="mailto:cycanseno07@gmail.com?subject=Portfolio%20Inquiry">Send an Email ↗</a><button class="btn" id="copy-email" type="button" data-email="cycanseno07@gmail.com">Copy Email</button></div>
+            <div class="education-inline"><strong>Education:</strong> Bachelor of Science in Maritime Transportation · University of Cebu · 2007–2011</div>
+          </div>
+          <div class="contact-actions">
+            <a class="btn" href="https://www.linkedin.com/in/cycanclydeseno/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>↗</span></a>
+            <a class="btn" href="https://wa.me/639608202708" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><span>↗</span></a>
+            <a class="btn" href="tel:+639608202708"><span>+63 960 820 2708</span><span>↗</span></a>
+            <a class="btn" href="https://drive.google.com/file/d/11LP8-N7sU12HJKHjTY7__1N6DCaB-yQ0/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>View Resume</span><span>↗</span></a>
+            <a class="btn" href="https://drive.google.com/file/d/1vgA5YfX-iIhVnhUpNEpSSDuNASVMRLdB/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>Full PDF Portfolio</span><span>↗</span></a>
+            <div class="contact-note">Cebu City, Philippines · UTC+8</div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Cycan Clyde Seno. All rights reserved.
+    <div class="container footer-row"><span>© <span id="year">2026</span> Cycan Clyde Seno. All rights reserved.</span><span><a href="#top">Back to top ↑</a></span></div>
   </footer>
+  <a class="back-to-top" id="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Hidden profile-photo editor. Open this site with ?edit=1 to enable it.
-    const params = new URLSearchParams(window.location.search);
-    const editMode = params.get("edit") === "1";
-
-    const profilePhoto = document.getElementById("profilePhoto");
-    const profileEditButton = document.getElementById("profileEditButton");
-    const profilePhotoInput = document.getElementById("profilePhotoInput");
-    const profileEditor = document.getElementById("profileEditor");
-    const chooseProfilePhoto = document.getElementById("chooseProfilePhoto");
-    const downloadProfilePhoto = document.getElementById("downloadProfilePhoto");
-    const resetProfilePreview = document.getElementById("resetProfilePreview");
-    const profileEditorStatus = document.getElementById("profileEditorStatus");
-    const originalProfileSrc = profilePhoto.getAttribute("src");
-    let optimizedProfileUrl = null;
-
-    if (editMode) {
-      document.body.classList.add("edit-mode");
-    }
-
-    const openProfileEditor = () => {
-      if (!editMode) return;
-      profileEditor.classList.toggle("show");
-    };
-
-    const openPhotoPicker = () => {
-      if (!editMode) return;
-      profilePhotoInput.click();
-    };
-
-    profileEditButton.addEventListener("click", openProfileEditor);
-    chooseProfilePhoto.addEventListener("click", openPhotoPicker);
-
-    profilePhotoInput.addEventListener("change", (event) => {
-      const file = event.target.files && event.target.files[0];
-      if (!file) return;
-
-      if (!file.type.startsWith("image/")) {
-        profileEditorStatus.textContent = "Please choose an image file.";
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = () => {
-        const image = new Image();
-        image.onload = () => {
-          const cropSize = Math.min(image.naturalWidth, image.naturalHeight);
-          const sourceX = Math.max(0, (image.naturalWidth - cropSize) / 2);
-          const sourceY = Math.max(0, (image.naturalHeight - cropSize) / 2);
-          const outputSize = 700;
-          const canvas = document.createElement("canvas");
-          canvas.width = outputSize;
-          canvas.height = outputSize;
-          const ctx = canvas.getContext("2d");
-
-          ctx.drawImage(
-            image,
-            sourceX,
-            sourceY,
-            cropSize,
-            cropSize,
-            0,
-            0,
-            outputSize,
-            outputSize
-          );
-
-          canvas.toBlob((blob) => {
-            if (!blob) {
-              profileEditorStatus.textContent = "I could not process this image. Please try another photo.";
-              return;
-            }
-
-            if (optimizedProfileUrl) {
-              URL.revokeObjectURL(optimizedProfileUrl);
-            }
-
-            optimizedProfileUrl = URL.createObjectURL(blob);
-            profilePhoto.src = optimizedProfileUrl;
-            downloadProfilePhoto.href = optimizedProfileUrl;
-            downloadProfilePhoto.hidden = false;
-            resetProfilePreview.hidden = false;
-
-            const originalKb = Math.max(1, Math.round(file.size / 1024));
-            const optimizedKb = Math.max(1, Math.round(blob.size / 1024));
-            profileEditorStatus.textContent = `Preview ready: ${originalKb} KB -> ${optimizedKb} KB. Download profile.jpg, then replace the existing file in GitHub.`;
-          }, "image/jpeg", 0.82);
-        };
-
-        image.onerror = () => {
-          profileEditorStatus.textContent = "That image could not be opened. Please choose another one.";
-        };
-        image.src = reader.result;
-      };
-      reader.readAsDataURL(file);
+    const menuButton = document.getElementById('menu-btn');
+    const nav = document.getElementById('site-nav');
+    const navLinks = [...nav.querySelectorAll('a')];
+    const backToTop = document.getElementById('back-to-top');
+    const copyEmail = document.getElementById('copy-email');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+    menuButton.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuButton.textContent = isOpen ? '✕' : '☰';
     });
-
-    resetProfilePreview.addEventListener("click", () => {
-      if (optimizedProfileUrl) {
-        URL.revokeObjectURL(optimizedProfileUrl);
-        optimizedProfileUrl = null;
-      }
-      profilePhoto.src = originalProfileSrc;
-      profilePhotoInput.value = "";
-      downloadProfilePhoto.hidden = true;
-      resetProfilePreview.hidden = true;
-      profileEditorStatus.textContent = "Preview reset. Your live profile photo has not been changed.";
+    navLinks.forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded','false');
+      menuButton.textContent='☰';
+    }));
+    window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 650), {passive:true});
+    if (copyEmail) copyEmail.addEventListener('click', async () => {
+      const email = copyEmail.dataset.email;
+      try {
+        await navigator.clipboard.writeText(email);
+        const oldText = copyEmail.textContent;
+        copyEmail.textContent = 'Email copied ✓';
+        setTimeout(() => copyEmail.textContent = oldText, 1800);
+      } catch { window.location.href = `mailto:${email}`; }
     });
-
-    const navLinks = document.querySelectorAll(".main-nav a");
-    const sections = document.querySelectorAll("main section");
-
-    const updateActiveNav = () => {
-      let current = "home";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 180;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", updateActiveNav);
-    updateActiveNav();
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      }), {threshold:0.08});
+      revealItems.forEach(item => observer.observe(item));
+    } else { revealItems.forEach(item => item.classList.add('visible')); }
   </script>
 </body>
 </html>
