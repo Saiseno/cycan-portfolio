@@ -1440,15 +1440,34 @@
     }
     .featured-card { overflow:hidden; display:flex; flex-direction:column; min-height:100%; }
     .featured-media {
-      aspect-ratio:16/10; overflow:hidden; background:#0b1220;
+      position: relative;
+      display: block;
+      aspect-ratio:16/10;
+      overflow:hidden;
+      background:#eef2f7;
       border-bottom:1px solid var(--border);
     }
-    .featured-media img { width:100%; height:100%; object-fit:cover; display:block; }
+    .featured-media img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      background:#eef2f7;
+    }
+    .featured-media .media-fallback {
+      position:absolute; inset:0; display:none; place-items:center; padding:24px;
+      text-align:center; color:var(--text);
+      background:linear-gradient(145deg, rgba(56,189,248,.13), rgba(99,102,241,.08)), #102039;
+    }
+    .featured-media.media-error img { display:none; }
+    .featured-media.media-error .media-fallback { display:grid; }
+    .media-fallback strong { display:block; font-size:1.2rem; margin-bottom:6px; }
+    .media-fallback span { color:var(--muted); font-size:.86rem; }
     .featured-body { padding:22px; display:flex; flex-direction:column; gap:12px; flex:1; }
     .featured-body p { color:var(--muted); }
     .featured-body .cta-row { margin-top:auto; }
     .featured-placeholder {
-      min-height:100%; display:grid; place-items:center; padding:34px;
+      min-height:0; display:grid; place-items:center; padding:34px;
       background:linear-gradient(145deg, rgba(56,189,248,.13), rgba(99,102,241,.08));
       text-align:center;
     }
@@ -1514,8 +1533,9 @@
         <a href="#intro">Video Intro</a>
         <a href="#expertise">Expertise</a>
         <a href="#work">Work</a>
-        <a href="#upwork">Upwork</a>
         <a href="#experience">Experience</a>
+        <a href="#upwork">Upwork</a>
+        <a href="#tools">Tools</a>
         <a href="#contact">Contact</a>
       </nav>
       <button class="menu-btn" id="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav">☰</button>
@@ -1636,16 +1656,17 @@
       <div class="container">
         <div class="section-heading tight reveal">
           <div>
-            <div class="section-kicker">Selected Work</div>
-            <h2>Proof first, details second.</h2>
+            <div class="section-kicker">Portfolio Highlights</div>
+            <h2>Selected Work</h2>
           </div>
-          <p>Three examples that show the range of my work without making recruiters scroll through every asset.</p>
+          <p>Examples of customer success, social media, content, and digital work - selected for quick recruiter review.</p>
         </div>
 
         <div class="featured-grid">
           <article class="card featured-card reveal">
             <a class="featured-media" href="social-media-operations.png" target="_blank" rel="noopener noreferrer" aria-label="Open Social Media Operations work sample">
-              <img src="social-media-operations.png" alt="Social Media Operations case study" loading="lazy" decoding="async" />
+              <img src="social-media-operations.png" alt="Social Media Operations case study" loading="lazy" decoding="async" data-fallback-label="Social Media Operations" />
+              <span class="media-fallback" aria-hidden="true"><span><strong>Social Media Operations</strong><span>Work sample image unavailable - use the case study button below.</span></span></span>
             </a>
             <div class="featured-body">
               <div class="eyebrow">Social Media Operations</div>
@@ -1657,8 +1678,9 @@
           </article>
 
           <article class="card featured-card reveal">
-            <a class="featured-media" href="BIGVU%20Screenshot%2001.png" target="_blank" rel="noopener noreferrer" aria-label="Open BIGVU work sample">
-              <img src="BIGVU%20Screenshot%2001.png" alt="BIGVU customer success and content work sample" loading="lazy" decoding="async" />
+            <a class="featured-media" href="BIGVU%20Screenshot%2001.png.png" target="_blank" rel="noopener noreferrer" aria-label="Open BIGVU work sample">
+              <img src="BIGVU%20Screenshot%2001.png.png" data-alt-src="BIGVU%20Screenshot%2001.png" alt="BIGVU customer success and content work sample" loading="lazy" decoding="async" />
+              <span class="media-fallback" aria-hidden="true"><span><strong>BIGVU Work Sample</strong><span>Preview unavailable - use the BIGVU samples button below.</span></span></span>
             </a>
             <div class="featured-body">
               <div class="eyebrow">BIGVU · Customer Success & Video</div>
@@ -1687,41 +1709,6 @@
             <a class="btn" href="https://www.behance.net/cycanseno?tracking_source=search_projects%7Csandugo" target="_blank" rel="noopener noreferrer">Behance ↗</a>
             <a class="btn" href="https://www.facebook.com/profile.php?id=100063829038641" target="_blank" rel="noopener noreferrer">Wikreate ↗</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="upwork" class="work-showcase">
-      <div class="container">
-        <div class="section-heading tight reveal">
-          <div>
-            <div class="section-kicker">Available on Upwork</div>
-            <h2>Three services clients can hire directly.</h2>
-          </div>
-          <p>These complement the employment-focused portfolio without taking over the page.</p>
-        </div>
-        <div class="upwork-compact-grid">
-          <article class="card upwork-compact-card reveal">
-            <div class="eyebrow">Social Media</div>
-            <h3>Content Publishing & Community Management</h3>
-            <p>Reliable day-to-day support for businesses that need content organized and published consistently.</p>
-            <ul><li>Instagram, Facebook and TikTok publishing</li><li>Caption and hashtag support</li><li>Basic community monitoring</li></ul>
-            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/marketing-social-media-content-publishing-and-community-management-2102765155177128768?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
-          </article>
-          <article class="card upwork-compact-card reveal">
-            <div class="eyebrow">CRM & Ticket Operations</div>
-            <h3>CRM Management & Ticket Organization</h3>
-            <p>Structured support operations for clean records, organized tickets and dependable follow-up tracking.</p>
-            <ul><li>CRM notes and customer records</li><li>Ticket categorization and status tracking</li><li>Follow-up and escalation documentation</li></ul>
-            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/admin-customer-support-professional-crm-management-and-customer-support-ticket-organization-2102760889744647923?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
-          </article>
-          <article class="card upwork-compact-card reveal">
-            <div class="eyebrow">Email & Chat Support</div>
-            <h3>Professional Email & Chat Customer Support</h3>
-            <p>Professional written customer support for product, account, order, service and troubleshooting inquiries.</p>
-            <ul><li>Email inbox and live-chat assistance</li><li>Follow-ups and escalation support</li><li>Clear customer-friendly responses</li></ul>
-            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/admin-customer-support-professional-email-and-chat-customer-support-for-your-business-2102750094642611877?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
-          </article>
         </div>
       </div>
     </section>
@@ -1760,11 +1747,46 @@
       </div>
     </section>
 
+    <section id="upwork" class="work-showcase">
+      <div class="container">
+        <div class="section-heading tight reveal">
+          <div>
+            <div class="section-kicker">Available on Upwork</div>
+            <h2>Three services clients can hire directly.</h2>
+          </div>
+          <p>Optional freelance services that complement my employment experience and give clients a direct way to work with me.</p>
+        </div>
+        <div class="upwork-compact-grid">
+          <article class="card upwork-compact-card reveal">
+            <div class="eyebrow">Social Media</div>
+            <h3>Content Publishing & Community Management</h3>
+            <p>Reliable day-to-day support for businesses that need content organized and published consistently.</p>
+            <ul><li>Instagram, Facebook and TikTok publishing</li><li>Caption and hashtag support</li><li>Basic community monitoring</li></ul>
+            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/marketing-social-media-content-publishing-and-community-management-2102765155177128768?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
+          </article>
+          <article class="card upwork-compact-card reveal">
+            <div class="eyebrow">CRM & Ticket Operations</div>
+            <h3>CRM Management & Ticket Organization</h3>
+            <p>Structured support operations for clean records, organized tickets and dependable follow-up tracking.</p>
+            <ul><li>CRM notes and customer records</li><li>Ticket categorization and status tracking</li><li>Follow-up and escalation documentation</li></ul>
+            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/admin-customer-support-professional-crm-management-and-customer-support-ticket-organization-2102760889744647923?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
+          </article>
+          <article class="card upwork-compact-card reveal">
+            <div class="eyebrow">Email & Chat Support</div>
+            <h3>Professional Email & Chat Customer Support</h3>
+            <p>Professional written customer support for product, account, order, service and troubleshooting inquiries.</p>
+            <ul><li>Email inbox and live-chat assistance</li><li>Follow-ups and escalation support</li><li>Clear customer-friendly responses</li></ul>
+            <div class="cta-row"><a class="btn btn-primary" href="https://www.upwork.com/services/product/admin-customer-support-professional-email-and-chat-customer-support-for-your-business-2102750094642611877?ref=fl_profile" target="_blank" rel="noopener noreferrer">View on Upwork ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="tools">
       <div class="container">
         <div class="section-heading tight reveal">
-          <div><div class="section-kicker">Tools & Platforms</div><h2>Keywords recruiters can scan quickly.</h2></div>
-          <p>Grouped by workflow instead of giving every tool its own large card.</p>
+          <div><div class="section-kicker">Tools & Platforms</div><h2>Platforms I work with.</h2></div>
+          <p>Grouped by workflow so the systems and tools behind my experience are easy to scan.</p>
         </div>
         <div class="tools-compact">
           <article class="card reveal"><h3>CRM & Customer Support</h3><div class="tag-list"><span class="tag">Salesforce</span><span class="tag">HubSpot CRM</span><span class="tag">Zendesk</span><span class="tag">Freshdesk</span><span class="tag">Crisp</span><span class="tag">Periskope CRM</span><span class="tag">Microsoft Teams</span><span class="tag">Zoom</span></div></article>
@@ -1830,6 +1852,22 @@
         setTimeout(() => copyEmail.textContent = oldText, 1800);
       } catch { window.location.href = `mailto:${email}`; }
     });
+    // Work-sample image fallback: try an alternate filename when supplied, then show a clean placeholder.
+    document.querySelectorAll('.featured-media img').forEach(img => {
+      img.addEventListener('error', () => {
+        const altSrc = img.dataset.altSrc;
+        if (altSrc && !img.dataset.altTried) {
+          img.dataset.altTried = '1';
+          img.src = altSrc;
+          const link = img.closest('a.featured-media');
+          if (link) link.href = altSrc;
+          return;
+        }
+        const media = img.closest('.featured-media');
+        if (media) media.classList.add('media-error');
+      });
+    });
+
     const revealItems = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => entries.forEach(entry => {
